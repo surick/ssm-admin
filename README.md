@@ -1,6 +1,6 @@
 # ssm-admin
 [![Build Status](https://travis-ci.org/surick/ssm-admin.svg?branch=master)](https://travis-ci.org/surick/ssm-admin)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/surick/ssm-admin/pulls)
 [![GitHub stars](https://img.shields.io/github/stars/surick/ssm-admin.svg?style=social&label=Stars)](https://github.com/surick/ssm-admin)
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
@@ -115,20 +115,15 @@ zheng.jtotop.js | 返回顶部插件  | [https://github.com/shuzheng/zheng.jtoto
 - dubbo-admin-2.5.3 [http://download.csdn.net/detail/shuzheng5201314/9733652](http://download.csdn.net/detail/shuzheng5201314/9733652 "dubbo-admin-2.5.3")
 - dubbo-admin-2.5.4-SNAPSHOT-jdk8 [http://download.csdn.net/detail/shuzheng5201314/9733657](http://download.csdn.net/detail/shuzheng5201314/9733657 "dubbo-admin-2.5.4-SNAPSHOT-jdk8")
 
-## 开发指南:
-
+## 开发指南
 
 ### 编译流程
-
-maven编译安装pom.xml文件即可
 
 ### 启动顺序（后台）
 
 ### 开发演示
 
 ### 部署方式
-
-### 框架规范约定
 
 ## 演示地址
 
@@ -144,86 +139,5 @@ maven编译安装pom.xml文件即可
 
 ## 附件
 
-### 相关博客
-
-### 优秀文章和博客
-
-- [创业互联网公司如何搭建自己的技术框架](http://shuzheng5201314.iteye.com/blog/2330151 "创业互联网公司如何搭建自己的技术框架")
-
-- [微服务实战](https://segmentfault.com/a/1190000004634172 "微服务实战")
-
-- [单点登录原理与简单实现](http://shuzheng5201314.iteye.com/blog/2343910 "单点登录原理与简单实现")
-
-- [ITeye论坛关于权限控制的讨论](http://www.iteye.com/magazines/82 "ITeye论坛关于权限控制的讨论")
-
-- [RBAC新解：基于资源的权限管理(Resource-Based Access Control)](http://globeeip.iteye.com/blog/1236167 "RBAC新解：基于资源的权限管理(Resource-Based Access Control)")
-
-- [网站架构经验随笔](http://jinnianshilongnian.iteye.com/blog/2289904 "网站架构经验随笔")
-
-- [支付系统架构](http://shuzheng5201314.iteye.com/blog/2355431 "支付系统架构")
-
-- [Spring整合JMS](http://elim.iteye.com/blog/1893038 "Spring整合JMS")
-
-- [跟我学Shiro目录贴](http://jinnianshilongnian.iteye.com/blog/2018398 "跟我学Shiro目录贴")
-
-- [跟我学SpringMVC目录汇总贴](http://jinnianshilongnian.iteye.com/blog/1752171 "跟我学SpringMVC目录汇总贴")
-
-- [跟我学spring3 目录贴](http://jinnianshilongnian.iteye.com/blog/1482071 "跟我学spring3 目录贴")
-
-- [跟我学OpenResty(Nginx+Lua)开发目录贴](http://jinnianshilongnian.iteye.com/blog/2190344 "跟我学OpenResty(Nginx+Lua)开发目录贴")
-
-- [Redis中文网](http://www.redis.net.cn/ "Redis中文网")
-
-- [读懂Redis并配置主从集群及高可用部署](http://mp.weixin.qq.com/s?__biz=MzIxNTYzOTQ0Ng==&mid=2247483668&idx=1&sn=cd31574877d38cf7ff9c047b86c9bf23&chksm=979475eda0e3fcfb6b5006bcd19c5a838eca9e369252847dbdf97820bf418201dd75c1dadda3&mpshare=1&scene=23&srcid=0117KUiiITwi2ETRan16xRVg#rd "读懂Redis并配置主从集群及高可用部署")
-
-- [Redis哨兵-实现Redis高可用](http://redis.majunwei.com/topics/sentinel.html "Redis哨兵-实现Redis高可用")
-
-- [ELK(ElasticSearch, Logstash, Kibana)搭建实时日志分析平台](http://www.open-open.com/lib/view/open1451801542042.html "ELK(ElasticSearch, Logstash, Kibana)搭建实时日志分析平台")
-
-- [Nginx基本功能极速入门](http://xxgblog.com/2015/05/17/nginx-start/ "Nginx基本功能极速入门")
-
-- [mybatis-genarator 自定义插件](https://my.oschina.net/alexgaoyh/blog/702791 "mybatis-genarator 自定义插件")
-
-- [Elasticsearch权威指南（中文版）](https://es.xiaoleilu.com/510_Deployment/20_hardware.html "Elasticsearch权威指南（中文版）")
-
-- [springMVC对简单对象、Set、List、Map的数据绑定和常见问题.](http://blog.csdn.net/z_dendy/article/details/12648641 "springMVC对简单对象、Set、List、Map的数据绑定和常见问题.")
-
-- [如何细粒度地控制你的MyBatis二级缓存](http://blog.csdn.net/luanlouis/article/details/41800511 "如何细粒度地控制你的MyBatis二级缓存")
-
-- [Git 在团队中的最佳实践--如何正确使用Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow "Git 在团队中的最佳实践--如何正确使用Git Flow")
-
-- [做个男人，做个成熟的男人，做个有城府的男人](http://shuzheng5201314.iteye.com/blog/1387820 "做个男人，做个成熟的男人，做个有城府的男人")
-
-
-### 在线小工具
-
-- [在线Cron表达式生成器](http://cron.qqe2.com/ "在线Cron表达式生成器")
-
-- [在线工具 - 程序员的工具箱](http://tool.lu/ "在线工具 - 程序员的工具箱")
-
-### 在线文档
-
-- [JDK7英文文档](http://tool.oschina.net/apidocs/apidoc?api=jdk_7u4 "JDK7英文文档")
-
-- [Spring4.x文档](http://spring.oschina.mopaas.com/ "Spring4.x文档")
-
-- [Mybatis3官网](http://www.mybatis.org/mybatis-3/zh/index.html "Mybatis3官网")
-
-- [Dubbo官网](http://dubbo.io/ "Dubbo官网")
-
-- [Nginx中文文档](http://tool.oschina.net/apidocs/apidoc?api=nginx-zh "Nginx中文文档")
-
-- [Freemarker在线手册](http://freemarker.foofun.cn/ "Freemarker在线中文手册")
-
-- [Velocity在线手册](http://velocity.apache.org/engine/devel/developer-guide.html "Velocity在线手册")
-
-- [Bootstrap在线手册](http://www.bootcss.com/ "Bootstrap在线手册")
-
-- [Git官网中文文档](https://git-scm.com/book/zh/v2 "Git官网中文文档")
-
-- [Thymeleaf](http://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html "Thymeleaf")
-
 ## 许可证
-
-[MIT](LICENSE "MIT")
 
