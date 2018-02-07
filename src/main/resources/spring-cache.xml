@@ -25,7 +25,7 @@
 	    <constructor-arg index="2" value="6379"  name="port" type="int"/>
 	    <constructor-arg index="3" value="5000"  name="timeout" type="int"/>
 	    <constructor-arg index="1" value="127.0.0.1" name="host" type="java.lang.String"/>
-		<constructor-arg index="4" value="jin961030" name="password" type="java.lang.String"/>
+		<!--<constructor-arg index="4" value="jin961030" name="password" type="java.lang.String"/>-->
 
 	</bean>
 	<!-- 
