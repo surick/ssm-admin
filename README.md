@@ -1,6 +1,5 @@
 # ssm-admin
 [![Build Status](https://travis-ci.org/surick/ssm-admin.svg?branch=master)](https://travis-ci.org/surick/ssm-admin)
-[![License](https://img.shields.io/badge/)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/surick/ssm-admin/pulls)
 [![GitHub stars](https://img.shields.io/github/stars/surick/ssm-admin.svg?style=social&label=Stars)](https://github.com/surick/ssm-admin)
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
