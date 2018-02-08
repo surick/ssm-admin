@@ -23,10 +23,9 @@
 				<@_left.role 3/>
         <div class="col-md-10">
     <form id="_form" action="" method="post">
-        <input type="text" name="mname" id="mname" class="username" placeholder="Model名称">
-        <input type="text" name="gid"  id="dept" placeholder="部门">
-        <button type="button" class="add">添加</button>
-        <div class="error"><span>+</span></div>
+        <input type="text" name="mname" id="mname" class="form-control" placeholder="Model名称">
+        <input type="text" name="gid"  id="dept" class="form-control" placeholder="部门">
+        <button type="button" id="add" class="btn btn-primary">添加</button>
     </form>
         </div>
     </div>
@@ -36,7 +35,7 @@
 <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
 <script >
     jQuery(document).ready(function() {
-        $('.add').click(function(){
+        $('#add').click(function(){
             var form = $('#_form');
             var error= form.find(".error");
             var tops = ['27px','96px','165px','235px','304px','372px'];
