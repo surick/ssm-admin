@@ -73,28 +73,27 @@
 		</div>
 	</@shiro.hasAnyRoles>   
 </#macro>
-<#--
 <#macro sop index>
 	<@shiro.user>
 		<div id="one" class="col-md-2">
             <ul data-spy="affix" class="nav nav-list nav-tabs nav-stacked bs-docs-sidenav dropdown affix" style="top: 100px; z-index: 100;">
 
 			  <li class="${(index==1)?string('active',' ')}">
-                  <a href="${basePath}/role/index.shtml">
+                  <a href="${basePath}/sop/addModel.shtml">
                       <i class="glyphicon glyphicon-chevron-right"></i>MODEL管理
                   </a>
               </li>
 			  <li class="${(index==2)?string('active',' ')} dropdown">
-                  <a href="${basePath}/role/allocation.shtml">
+                  <a href="${basePath}/sop/allocation.shtml">
                       <i class="glyphicon glyphicon-chevron-right"></i>文件管理
                   </a>
               </li>
 			  <li class="${(index==3)?string('active',' ')} dropdown">
-                  <a href="${basePath}/permission/index.shtml">
+                  <a href="${basePath}/sop/index.shtml">
                       <i class="glyphicon glyphicon-chevron-right"></i>日志管理
                   </a>
               </li>
             </ul>
         </div>
 	</@shiro.user>
-</#macro>-->
+</#macro>

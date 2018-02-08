@@ -74,11 +74,11 @@
 </head>
 <body data-target="#one" data-spy="scroll">
 <#--引入头部-->
-		<@_top.top 3/>
+		<@_top.top 4/>
 <div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
     <div class="row">
     <#--引入左侧菜单-->
-				<@_left.role 3/>
+				<@_left.sop 1/>
         <div class="col-md-10">
             <h2>MODEL管理</h2>
             <hr>
