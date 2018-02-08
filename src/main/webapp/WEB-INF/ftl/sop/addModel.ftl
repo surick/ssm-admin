@@ -98,9 +98,9 @@
                 <table class="table table-bordered">
                     <tr>
                         <th><input type="checkbox" id="checkAll"/></th>
-                        <th>ModelID</th>
                         <th>Model名称</th>
                         <th>部门</th>
+                        <th>操作</th>
                     </tr>
 						<#if page?exists && page.list?size gt 0 >
                             <#list page.list as it>
