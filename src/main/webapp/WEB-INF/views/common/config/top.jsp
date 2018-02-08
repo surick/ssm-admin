@@ -19,7 +19,7 @@
           </button>
 	     </div>
 	     <div role="navigation" class="navbar-collapse collapse">
-	     		<a id="_logo"  href="<%=basePath%>" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm">SSM + Shiro Demo 演示</a>
+	     		<a id="_logo"  href="<%=basePath%>" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm">ssm-admin</a>
 	          <ul class="nav navbar-nav" id="topMenu">
 				<li class="dropdown ">
 					<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="<%=basePath%>/user/index.shtml">
@@ -69,22 +69,7 @@
 							</shiro:hasPermission>
 						</ul>
 					</li>	
-				</shiro:hasAnyRoles>    
-				<li>
-					<a class="dropdown-toggle" target="_blank" href="http://www.sojson.com/tag_shiro.html" target="_blank">
-						Shiro相关博客<span class="collapsing"></span>
-					</a>
-				</li>	          
-				<li>
-					<a class="dropdown-toggle" href="http://www.sojson.com/shiro" target="_blank">
-						本项目介绍<span class="collapsing"></span>
-					</a>
-				</li>	          
-				<li>
-					<a class="dropdown-toggle" href="http://www.sojson.com/jc/shiro.html" target="_blank">
-						Shiro Demo 其他版本<span class="collapsing"></span>
-					</a>
-				</li>	          
+				</shiro:hasAnyRoles>
 	          </ul>
 	           <ul class="nav navbar-nav  pull-right" >
 				<li class="dropdown " style="color:#fff;">
