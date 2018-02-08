@@ -52,7 +52,7 @@
 								<li><a href="${basePath}/role/index.shtml">角色列表</a></li>
 							</@shiro.hasPermission>
 							<@shiro.hasPermission name="/role/allocation.shtml">
-								<li><a href="${basePath}/role/allocation.shtml">角色分配（这是个JSP页面）</a></li>
+								<li><a href="${basePath}/role/allocation.shtml">角色分配</a></li>
 							</@shiro.hasPermission>
 							<@shiro.hasPermission name="/permission/index.shtml">
 								<li><a href="${basePath}/permission/index.shtml">权限列表</a></li>
@@ -63,6 +63,19 @@
 						</ul>
 					</li>	
 				</@shiro.hasAnyRoles>
+			    <#--拥有 角色666666(文件管理）-->
+				  <@shiro.user>
+				  	<li class="dropdown ${(index==4)?string('active','')}">
+                      <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/sop/addModel.shtml">
+                          SOP管理<span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+								<li><a href="${basePath}/sop/addModel.shtml">MODEL管理</a></li>
+								<li><a href="${basePath}/sop/allocation.shtml">文件管理</a></li>
+								<li><a href="${basePath}/sop/index.shtml">日志管理</a></li>
+                      </ul>
+                  	</li>
+				  </@shiro.user>
 	          </ul>
 	           <ul class="nav navbar-nav  pull-right" >
 				<li class="dropdown ${(index==10)?string('active','')}" style="color:#fff;">

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljg.common.dao.UModelMapper" >
+    <resultMap id="BaseResultMap" type="com.ljg.common.model.UModel" >
+        <id column="mid" property="mid" jdbcType="BIGINT" />
+        <result column="mname" property="mname" jdbcType="VARCHAR" />
+        <result column="gid" property="gid" jdbcType="BIGINT" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        mid,mname,gid
+    </sql>
+
+    <select id="selectModelByGroup" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+        <include refid="Base_Column_List" />
+        from sop_model
+        where gid = #{gid,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteModelById" parameterType="java.lang.Long" >
+        delete from sop_model
+        where mid = #{mid,jdbcType=BIGINT}
+    </delete>
+    <insert id="addModel" useGeneratedKeys="true" keyProperty="id" parameterType="com.ljg.common.model.UModel" >
+        insert into sop_model (mid, mname, gid)
+        values (#{mid,jdbcType=BIGINT}, #{mname,jdbcType=VARCHAR}, #{gid,jdbcType=BIGINT})
+    </insert>
+
+</mapper>
