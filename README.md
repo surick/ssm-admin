@@ -29,6 +29,7 @@ Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.
 FluentValidator | 校验框架  | [https://github.com/neoremind/fluent-validator](https://github.com/neoremind/fluent-validator)
 Thymeleaf | 模板引擎  | [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
 Velocity | 模板引擎  | [http://velocity.apache.org/](http://velocity.apache.org/)
+FreeMark | 模板引擎  | [https://freemarker.apache.org/](https://freemarker.apache.org/)
 ZooKeeper | 分布式协调服务  | [http://zookeeper.apache.org/](http://zookeeper.apache.org/)
 Dubbo | 分布式服务框架  | [http://dubbo.io/](http://dubbo.io/)
 TBSchedule & elastic-job | 分布式调度框架  | [https://github.com/dangdangdotcom/elastic-job](https://github.com/dangdangdotcom/elastic-job)
@@ -76,9 +77,8 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 
 #### 开发工具:
 - MySql: 数据库
-- jetty: 开发服务器
 - Tomcat: 应用服务器
-- SVN|Git: 版本管理
+- Git: 版本管理
 - Nginx: 反向代理服务器
 - Varnish: HTTP加速器
 - IntelliJ IDEA: 开发IDE
