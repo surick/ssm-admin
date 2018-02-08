@@ -12,8 +12,66 @@
     <script  src="${basePath}/js/common/layer/layer.js"></script>
     <script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script  src="${basePath}/js/shiro.demo.js"></script>
+    <script >
+    so.init(function(){
+        //初始化全选。
+        so.checkBoxInit('#checkAll','[check=box]');
+        //全选
+        so.id('deleteAll').on('click',function(){
+            var checkeds = $('[check=box]:checked');
+            if(!checkeds.length){
+                return layer.msg('请选择要删除的选项。',so.default),!0;
+            }
+            var array = [];
+            checkeds.each(function(){
+                array.push(this.value);
+            });
+            return deleteById(array);
+        });
+    });
+    <#--根据ID数组删除model-->
+    function deleteById(ids){
+        var index = layer.confirm("确定这"+ ids.length +"个model？",function(){
+            var load = layer.load();
+            $.post('${basePath}/sop/deleteModelById.shtml',{ids:ids.join(',')},function(result){
+                layer.close(load);
+                if(result && result.status != 200){
+                    return layer.msg(result.message,so.default),!0;
+                }else{
+                    layer.msg(result.resultMsg);
+                    setTimeout(function(){
+                        $('#formId').submit();
+                    },1000);
+                }
+            },'json');
+            layer.close(index);
+        });
+    }
+    <#--添加model-->
+    function addModel(){
+        var mname = $('#mname').val(),
+                gid  = $('#gid').val();
+        if($.trim(mname) == ''){
+            return layer.msg('model名称不能为空。',so.default),!1;
+        }
+        if($.trim(gid) == ''){
+            return layer.msg('部门名不能为空。',so.default),!1;
+        }
+    <#--loding-->
+        var load = layer.load();
+        $.post('${basePath}/sop/addModel.shtml',{mname:mname,gid:gid},function(result){
+            layer.close(load);
+            if(result && result.status != 200){
+                return layer.msg(result.message,so.default),!1;
+            }
+            layer.msg('添加成功。');
+            setTimeout(function(){
+                $('#formId').submit();
+            },1000);
+        },'json');
+    }
+</script>
 </head>
-
 <body data-target="#one" data-spy="scroll">
 <#--引入头部-->
 		<@_top.top 3/>
@@ -22,52 +80,82 @@
     <#--引入左侧菜单-->
 				<@_left.role 3/>
         <div class="col-md-10">
-    <form id="_form" action="" method="post">
-        <input type="text" name="mname" id="mname" class="form-control" placeholder="Model名称">
-        <input type="text" name="gid"  id="dept" class="form-control" placeholder="部门">
-        <button type="button" id="add" class="btn btn-primary">添加</button>
-    </form>
+            <h2>MODEL管理</h2>
+            <hr>
+            <form method="post" action="" id="formId" class="form-inline">
+                <div clss="well">
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 300px;" value="${findContent?default('')}"
+                               name="findContent" id="findContent" placeholder="输入MODEL名称">
+                    </div>
+                    <span class=""> <#--pull-right -->
+				         	<button type="submit" class="btn btn-primary">查询</button>
+				         		<a class="btn btn-success" onclick="$('#addModel').modal();">增加MODEL</a>
+				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
+				         </span>
+                </div>
+                <hr>
+                <table class="table table-bordered">
+                    <tr>
+                        <th><input type="checkbox" id="checkAll"/></th>
+                        <th>ModelID</th>
+                        <th>Model名称</th>
+                        <th>部门</th>
+                    </tr>
+						<#if page?exists && page.list?size gt 0 >
+                            <#list page.list as it>
+								<tr>
+                                    <td><input value="${it.id}" check='box' type="checkbox" /></td>
+                                    <td>${it.name?default('-')}</td>
+                                    <td>${it.url?default('-')}</td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.id}]);">删除</a>
+                                    </td>
+                                </tr>
+                            </#list>
+                        <#else>
+							<tr>
+                                <td class="text-center danger" colspan="4">没有找到MODEL</td>
+                            </tr>
+                        </#if>
+                </table>
+					<#if page?exists>
+						<div class="pagination pull-right">
+                            ${page.pageHtml}
+                        </div>
+                    </#if>
+            </form>
+        </div>
+    </div><#--/row-->
+<#--弹框-->
+    <div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="addModelLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addModelLabel">添加MODEL</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="boxRoleForm">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">MODEL名称:</label>
+                            <input type="text" class="form-control" name="mname" id="mname" placeholder="请输入MODEL名称"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">部门名:</label>
+                            <input type="text" class="form-control" id="gid" name="gid"  placeholder="请输入部门名">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="addModel();" class="btn btn-primary">Save</button>
+                </div>
+            </div>
         </div>
     </div>
+<#--/弹框-->
 </div>
-
-<!-- Javascript -->
-<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-<script >
-    jQuery(document).ready(function() {
-        $('#add').click(function(){
-            var form = $('#_form');
-            var error= form.find(".error");
-            var tops = ['27px','96px','165px','235px','304px','372px'];
-            var inputs = $("form :text");
-            for(var i=0;i<inputs.length;i++){
-                var self = $(inputs[i]);
-                if(self.val() == ''){
-                    error.fadeOut('fast', function(){
-                        $(this).css('top', tops[i]);
-                    });
-                    error.fadeIn('fast', function(){
-                        self.focus();
-                    });
-                    return !1;
-                }
-            }
-            var load = layer.load();
-            $.post("${basePath}/sop/addModel.shtml",$("#_form").serialize() ,function(result){
-                layer.close(load);
-                if(result && result.status!= 200){
-                    return layer.msg(result.message,function(){}),!1;
-                }else{
-                    layer.msg('添加成功！' );
-                    window.location.href= result.back_url || "${basePath}/";
-                }
-            },"json");
-
-        });
-
-
-    });
-</script>
 </body>
 
 </html>
