@@ -113,7 +113,7 @@ public class UserLoginController extends BaseController {
 			
 			/**
 			 * shiro 获取登录之前的地址
-			 * 之前0.1版本这个没判断空。
+			 *
 			 */
 			SavedRequest savedRequest = WebUtils.getSavedRequest(request);
 			String url = null ;

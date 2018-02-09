@@ -66,11 +66,11 @@
 			    <#--拥有 角色666666(文件管理）-->
 				  <@shiro.user>
 				  	<li class="dropdown ${(index==4)?string('active','')}">
-                      <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/sop/addModel.shtml">
+                      <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/sop/model/index.shtml">
                           SOP管理<span class="caret"></span>
                       </a>
                       <ul class="dropdown-menu">
-								<li><a href="${basePath}/sop/addModel.shtml">MODEL管理</a></li>
+								<li><a href="${basePath}/sop/model/index.shtml">MODEL管理</a></li>
 								<li><a href="${basePath}/sop/allocation.shtml">文件管理</a></li>
 								<li><a href="${basePath}/sop/index.shtml">日志管理</a></li>
                       </ul>

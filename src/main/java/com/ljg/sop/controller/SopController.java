@@ -3,10 +3,12 @@ package com.ljg.sop.controller;
 import com.ljg.common.controller.BaseController;
 import com.ljg.common.model.UModel;
 import com.ljg.common.utils.LoggerUtils;
+import com.ljg.core.mybatis.page.Pagination;
 import com.ljg.sop.service.ModelService;
 import net.sf.json.JSONObject;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,12 +30,14 @@ public class SopController extends BaseController{
     @Resource
     ModelService modelService;
 
-    @RequestMapping(value = "addModel",method = RequestMethod.GET)
-    public ModelAndView model(){
-        return new ModelAndView("sop/addModel");
+    @RequestMapping(value = "model/index")
+    public ModelAndView index(String findContent, ModelMap modelMap, Integer pageNo){
+        modelMap.put("findContent", findContent);
+        Pagination<UModel> model = modelService.findPage(modelMap,pageNo,pageSize);
+        return new ModelAndView("sop/model/index","page",model);
     }
 
-    @RequestMapping(value = "addModel",method = RequestMethod.POST)
+    @RequestMapping(value = "model/addModel",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> addModel(UModel model){
         resultMap.put("status",400);
@@ -43,5 +47,12 @@ public class SopController extends BaseController{
         resultMap.put("status",200);
         return resultMap;
     }
+
+    @RequestMapping(value = "model/deleteModelByMid",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> deleteModelByMid(String mids){
+        return modelService.deleteModelById(mids);
+    }
+
 
 }

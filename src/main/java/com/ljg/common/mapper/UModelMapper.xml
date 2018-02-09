@@ -9,14 +9,35 @@
     <sql id="Base_Column_List" >
         mid,mname,gid
     </sql>
+    <sql id="limit_sql">
+        <if test="page_sql != null and page_sql != ''">
+            ${page_sql}
+        </if>
+    </sql>
 
-    <select id="selectModelByGroup" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    <sql id="where_all">
+        <where>
+            <if test="findContent != null and findContent !='' " >
+                and (
+                LOWER(mname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%")) or
+                LOWER(gid) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%"))
+                )
+            </if>
+        </where>
+    </sql>
+    <select id="findAll" resultMap="BaseResultMap" >
         select
         <include refid="Base_Column_List" />
         from sop_model
-        where gid = #{gid,jdbcType=BIGINT}
+        <include refid="where_all"/>
+        <include refid="limit_sql" />
     </select>
-    <delete id="deleteModelById" parameterType="java.lang.Long" >
+    <select id="findCount" resultMap="BaseResultMap" >
+        select count(mid) from  sop_model
+        <include refid="where_all" />
+    </select>
+
+    <delete id="deleteModelByMid" parameterType="java.lang.Long" >
         delete from sop_model
         where mid = #{mid,jdbcType=BIGINT}
     </delete>

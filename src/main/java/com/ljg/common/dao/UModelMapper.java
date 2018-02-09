@@ -2,6 +2,8 @@ package com.ljg.common.dao;
 
 import com.ljg.common.model.UModel;
 
+import java.util.List;
+
 /**
  *model mapper 接口
  *
@@ -10,7 +12,7 @@ import com.ljg.common.model.UModel;
  */
 public interface UModelMapper {
     int addModel(UModel model);
-    UModel selectModelByGroup(Long gid);
-    int deleteModelById(Long mid);
+    int deleteModelByMid(Long mid);
+    List<UModel> findModelByMid(Long id);
 
 }

@@ -33,7 +33,7 @@
     function deleteById(ids){
         var index = layer.confirm("确定这"+ ids.length +"个model？",function(){
             var load = layer.load();
-            $.post('${basePath}/sop/deleteModelById.shtml',{ids:ids.join(',')},function(result){
+            $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mid:ids.join(',')},function(result){
                 layer.close(load);
                 if(result && result.status != 200){
                     return layer.msg(result.message,so.default),!0;
@@ -59,7 +59,7 @@
         }
     <#--loding-->
         var load = layer.load();
-        $.post('${basePath}/sop/addModel.shtml',{mname:mname,gid:gid},function(result){
+        $.post('${basePath}/sop/model/addModel.shtml',{mname:mname,gid:gid},function(result){
             layer.close(load);
             if(result && result.status != 200){
                 return layer.msg(result.message,so.default),!1;
@@ -86,7 +86,7 @@
                 <div clss="well">
                     <div class="form-group">
                         <input type="text" class="form-control" style="width: 300px;" value="${findContent?default('')}"
-                               name="findContent" id="findContent" placeholder="输入MODEL名称">
+                               name="findContent" id="findContent" placeholder="输入部门名称">
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>
@@ -105,11 +105,11 @@
 						<#if page?exists && page.list?size gt 0 >
                             <#list page.list as it>
 								<tr>
-                                    <td><input value="${it.id}" check='box' type="checkbox" /></td>
-                                    <td>${it.name?default('-')}</td>
-                                    <td>${it.url?default('-')}</td>
+                                    <td><input value="${it.mid}" check='box' type="checkbox" /></td>
+                                    <td>${it.mname?default('-')}</td>
+                                    <td>${it.gid?default('-')}</td>
                                     <td>
-                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.id}]);">删除</a>
+                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
                                     </td>
                                 </tr>
                             </#list>
