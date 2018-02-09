@@ -70,7 +70,7 @@
                           SOP管理<span class="caret"></span>
                       </a>
                       <ul class="dropdown-menu">
-								<li><a href="${basePath}/sop/model/index.shtml">MODEL管理</a></li>
+								<li><a href="${basePath}/sop/model/index.shtml">Model管理</a></li>
 								<li><a href="${basePath}/sop/allocation.shtml">文件管理</a></li>
 								<li><a href="${basePath}/sop/index.shtml">日志管理</a></li>
                       </ul>

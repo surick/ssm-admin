@@ -30,10 +30,10 @@
         });
     });
     <#--根据ID数组删除model-->
-    function deleteById(ids){
-        var index = layer.confirm("确定这"+ ids.length +"个model？",function(){
+    function deleteById(mids){
+        var index = layer.confirm("确定这"+ mids.length +"个model？",function(){
             var load = layer.load();
-            $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mid:ids.join(',')},function(result){
+            $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mids:mids.join(',')},function(result){
                 layer.close(load);
                 if(result && result.status != 200){
                     return layer.msg(result.message,so.default),!0;

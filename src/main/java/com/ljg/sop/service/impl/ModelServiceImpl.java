@@ -51,14 +51,15 @@ public class ModelServiceImpl extends BaseMybatisDao<UModelMapper> implements Mo
             }
 
             for (String idx : idArray) {
-                Long id = new Long(idx);
-
-                List<UModel> rolePermissions= modelMapper.findModelByMid(id);
-                if(null != rolePermissions && rolePermissions.size() > 0){
-                    errorCount += rolePermissions.size();
-                }else{
-                    successCount+=this.deleteModelByMid(id);
-                }
+                Long mid = new Long(idx);
+                successCount += this.deleteModelByMid(mid);
+                errorCount =idArray.length-successCount;
+                //List<UModel> models= modelMapper.findModelByMid(mid);
+                //if(null != models && models.size() > 0){
+                //    errorCount += models.size();
+                //}else{
+                //    successCount+=this.deleteModelByMid(mid);
+                //}
             }
             resultMap.put("status", 200);
             //如果有成功的，也有失败的，提示清楚。
@@ -69,7 +70,7 @@ public class ModelServiceImpl extends BaseMybatisDao<UModelMapper> implements Mo
             }
             resultMap.put("resultMsg", resultMsg);
         } catch (Exception e) {
-            LoggerUtils.fmtError(getClass(), e, "根据IDS删除用户出现错误，ids[%s]", mids);
+            LoggerUtils.fmtError(getClass(), e, "根据MIDS删除用户出现错误，mids[%s]", mids);
             resultMap.put("status", 500);
             resultMap.put("message", "删除出现错误，请刷新后再试！");
         }

@@ -13,6 +13,6 @@ import java.util.List;
 public interface UModelMapper {
     int addModel(UModel model);
     int deleteModelByMid(Long mid);
-    List<UModel> findModelByMid(Long id);
+    List<UModel> findModelByMid(Long mid);
 
 }

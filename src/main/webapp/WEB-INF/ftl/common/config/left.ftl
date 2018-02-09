@@ -79,8 +79,8 @@
             <ul data-spy="affix" class="nav nav-list nav-tabs nav-stacked bs-docs-sidenav dropdown affix" style="top: 100px; z-index: 100;">
 
 			  <li class="${(index==1)?string('active',' ')}">
-                  <a href="${basePath}/sop/addModel.shtml">
-                      <i class="glyphicon glyphicon-chevron-right"></i>MODEL管理
+                  <a href="${basePath}/sop/model/index.shtml">
+                      <i class="glyphicon glyphicon-chevron-right"></i>Model管理
                   </a>
               </li>
 			  <li class="${(index==2)?string('active',' ')} dropdown">

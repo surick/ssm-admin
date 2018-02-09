@@ -36,6 +36,12 @@
         select count(mid) from  sop_model
         <include refid="where_all" />
     </select>
+    <!-- 根据MID查找 -->
+    <select id="findModelByMid" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sop_model
+        where mid = #{mid,jdbcType=BIGINT}
+    </select>
 
     <delete id="deleteModelByMid" parameterType="java.lang.Long" >
         delete from sop_model

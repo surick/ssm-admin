@@ -80,16 +80,16 @@ public class PermissionServiceImpl extends BaseMybatisDao<UPermissionMapper> imp
 			}else{
 				idArray = new String[]{ids};
 			}
+
 			
 			for (String idx : idArray) {
 				Long id = new Long(idx);
-				
-				List<URolePermission> rolePermissions= rolePermissionMapper.findRolePermissionByPid(id);
-				if(null != rolePermissions && rolePermissions.size() > 0){
-					errorCount += rolePermissions.size();
-				}else{
-					successCount+=this.deleteByPrimaryKey(id);
-				}
+				successCount += this.deleteByPrimaryKey(id);
+				errorCount = idArray.length - successCount;
+				//List<URolePermission> rolePermissions= rolePermissionMapper.findRolePermissionByPid(id);
+				//if(null != rolePermissions && rolePermissions.size() > 0){
+				//	errorCount += rolePermissions.size();
+				//}
 			}
 			resultMap.put("status", 200);
 			//如果有成功的，也有失败的，提示清楚。
