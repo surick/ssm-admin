@@ -42,7 +42,7 @@ public class SopController extends BaseController{
     public Map<String,Object> addModel(UModel model){
         resultMap.put("status",400);
         model = modelService.addModel(model);
-        LoggerUtils.fmtDebug(getClass(), "注册插入完毕！", JSONObject.fromObject(model).toString());
+        LoggerUtils.fmtDebug(getClass(), "添加model完毕！", JSONObject.fromObject(model).toString());
         resultMap.put("message","添加MODEL成功");
         resultMap.put("status",200);
         return resultMap;

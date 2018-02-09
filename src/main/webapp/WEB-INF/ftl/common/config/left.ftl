@@ -74,7 +74,7 @@
 	</@shiro.hasAnyRoles>   
 </#macro>
 <#macro sop index>
-	<@shiro.user>
+	<@shiro.hasAnyRoles name='888888,666666'>
 		<div id="one" class="col-md-2">
             <ul data-spy="affix" class="nav nav-list nav-tabs nav-stacked bs-docs-sidenav dropdown affix" style="top: 100px; z-index: 100;">
 
@@ -95,5 +95,5 @@
               </li>
             </ul>
         </div>
-	</@shiro.user>
+	</@shiro.hasAnyRoles>
 </#macro>

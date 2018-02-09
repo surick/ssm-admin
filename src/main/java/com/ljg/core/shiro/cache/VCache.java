@@ -23,9 +23,9 @@ public class VCache {
 	/****
 	 *
 	 *
-	 * 这里老有同学问，这个VCache和 {@link JedisManager} 有什么区别，
+	 * VCache和 {@link JedisManager} 有什么区别，
 	 *
-	 * 没啥区别，我只是想把shiro的操作和 业务Cache的操作分开
+	 * 把shiro的操作和 业务Cache的操作分开
 	 *
 	 *
 	 *

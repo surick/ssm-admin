@@ -2,7 +2,6 @@ package com.ljg.sop.service.impl;
 
 import com.ljg.common.dao.UModelMapper;
 import com.ljg.common.model.UModel;
-import com.ljg.common.model.URolePermission;
 import com.ljg.common.utils.LoggerUtils;
 import com.ljg.common.utils.StringUtils;
 import com.ljg.core.mybatis.BaseMybatisDao;
