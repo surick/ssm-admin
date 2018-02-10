@@ -5,13 +5,11 @@
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
 
 ## 前言
-
+基于权限系统附加各种业务模块
 
 ## 项目介绍
 
 　　Privilege Management System Based on SSM + Redis + Freemarker + Shiro
-
-### 组织结构
 
 ### 技术选型
 
@@ -63,16 +61,6 @@ jquery-confirm | 弹出窗口插件  | [https://github.com/craftpip/jquery-confi
 jQuery EasyUI | 基于jQuery的UI插件集合体  | [http://www.jeasyui.com](http://www.jeasyui.com)
 React | 界面构建框架  | [https://github.com/facebook/react](https://github.com/facebook/react)
 Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://github.com/pandao/editor.md)
-
-#### 架构图
-
-
-#### 模块依赖
-
-
-#### 模块介绍
-
-
 ## 环境搭建
 
 #### 开发工具:
@@ -109,30 +97,4 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 - Jenkins [http://updates.jenkins-ci.org/download/war/](http://updates.jenkins-ci.org/download/war/ "Jenkins")
 - dubbo-admin-2.5.3 [http://download.csdn.net/detail/shuzheng5201314/9733652](http://download.csdn.net/detail/shuzheng5201314/9733652 "dubbo-admin-2.5.3")
 - dubbo-admin-2.5.4-SNAPSHOT-jdk8 [http://download.csdn.net/detail/shuzheng5201314/9733657](http://download.csdn.net/detail/shuzheng5201314/9733657 "dubbo-admin-2.5.4-SNAPSHOT-jdk8")
-
-## 开发指南
-
-### 编译流程
-
-### 启动顺序（后台）
-
-### 开发演示
-
-### 部署方式
-
-## 演示地址
-
-### 预览图
-
-### 数据模型
-
-### 拓扑图
-
-### 开发进度
-
-### 常见问题
-
-## 附件
-
-## 许可证
 
