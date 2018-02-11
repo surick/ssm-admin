@@ -30,10 +30,10 @@
             });
         });
         <#--根据ID数组删除model-->
-        function deleteById(mids){
-            var index = layer.confirm("确定这"+ mids.length +"个model？",function(){
+        function deleteById(fids){
+            var index = layer.confirm("确定这"+ mids.length +"个文件？",function(){
                 var load = layer.load();
-                $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mids:mids.join(',')},function(result){
+                $.post('${basePath}/sop/file/deleteFileByFid.shtml',{fids:fids.join(',')},function(result){
                     layer.close(load);
                     if(result && result.status != 200){
                         return layer.msg(result.message,so.default),!0;
@@ -48,18 +48,28 @@
             });
         }
         <#--添加model-->
-        function addModel(){
-            var mname = $('#mname').val(),
-                    gid  = $('#gid').val();
-            if($.trim(mname) == ''){
+        function addFile(){
+            var mid = $('#mid').val(),
+                    fnum = $('#fnum').val(),
+                    fname = $('#fname').val(),
+                    fver = $('#fver').val(),
+                    fpath = $('#file').val(),
+                    file = new FormData($('#file')[0]);
+            if($.trim(mid) == ''){
                 return layer.msg('model名称不能为空。',so.default),!1;
             }
-            if($.trim(gid) == ''){
-                return layer.msg('部门名不能为空。',so.default),!1;
+            if($.trim(fnum) == ''){
+                return layer.msg('NUM不能为空。',so.default),!1;
+            }
+            if($.trim(fname) == ''){
+                return layer.msg('文件名不能为空。',so.default),!1;
+            }
+            if($.trim(fver) == ''){
+                return layer.msg('版本不能为空。',so.default),!1;
             }
         <#--loding-->
             var load = layer.load();
-            $.post('${basePath}/sop/model/addModel.shtml',{mname:mname,gid:gid},function(result){
+            /*$.post('${basePath}/sop/file/addFile.shtml',{mid:mid,fnum:fnum,fname:fname,fver:fver,fpath:fpath,file:file},function(result){
                 layer.close(load);
                 if(result && result.status != 200){
                     return layer.msg(result.message,so.default),!1;
@@ -68,7 +78,24 @@
                 setTimeout(function(){
                     $('#formId').submit();
                 },1000);
-            },'json');
+            },'json');*/
+            $.ajax({
+                url: '${basePath}/sop/file/addFile.shtml',
+                type: 'POST',
+                cache: false,
+                data: {mid:mid,fnum:fnum,fname:fname,fver:fver,fpath:fpath,file:file},
+                processData: false,
+                contentType: false
+            }).done(function(result) {
+                layer.close(load);
+                if(result && result.status != 200){
+                    return layer.msg(result.message,so.default),!1;
+                }
+                layer.msg('添加成功。');
+                setTimeout(function(){
+                    $('#formId').submit();
+                },1000);
+            });
         }
     </script>
 </head>
@@ -90,7 +117,7 @@
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>
-				         		<a class="btn btn-success" onclick="$('#addModel').modal();">增加MODEL</a>
+				         		<a class="btn btn-success" onclick="$('#addFile').modal();">增加文件</a>
 				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
 				         </span>
                 </div>
@@ -98,24 +125,36 @@
                 <table class="table table-bordered">
                     <tr>
                         <th><input type="checkbox" id="checkAll"/></th>
+                        <th>NUM</th>
                         <th>Model名称</th>
-                        <th>部门</th>
+                        <th>文件名</th>
+                        <th>档案名</th>
+                        <th>文件版本</th>
+                        <th>上传人</th>
+                        <th>更新时间</th>
                         <th>操作</th>
                     </tr>
 						<#if page?exists && page.list?size gt 0 >
                             <#list page.list as it>
 								<tr>
-                                    <td><input value="${it.mid}" check='box' type="checkbox" /></td>
+                                    <td><input value="${it.fid}" check='box' type="checkbox" /></td>
+                                    <td>${it.fnum?default('-')}</td>
                                     <td>${it.mname?default('-')}</td>
-                                    <td>${it.gid?default('-')}</td>
+                                    <td>${it.fname?default('-')}</td>
+                                    <td>${it.fpath?default('-')}</td>
+                                    <td>${it.fver?default('-')}</td>
+                                    <td>${it.fuser?default('-')}</td>
+                                    <td>${it.ftime?default('-')}</td>
                                     <td>
+                                        <i class="glyphicon glyphicon-eye-open"></i><a href="javascript:deleteById([${it.mid}]);">查看</a>
+                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:deleteById([${it.mid}]);">更新</a>
                                         <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
                                     </td>
                                 </tr>
                             </#list>
                         <#else>
 							<tr>
-                                <td class="text-center danger" colspan="4">没有找到MODEL</td>
+                                <td class="text-center danger" colspan="9">没有找到文件</td>
                             </tr>
                         </#if>
                 </table>
@@ -128,28 +167,40 @@
         </div>
     </div><#--/row-->
 <#--弹框-->
-    <div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="addModelLabel">
+    <div class="modal fade" id="addFile" tabindex="-1" role="dialog" aria-labelledby="addFileLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="addModelLabel">添加MODEL</h4>
+                    <h4 class="modal-title" id="addFileLabel">添加文件</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="boxRoleForm">
+                    <form id="boxFileForm">
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">MODEL名称:</label>
-                            <input type="text" class="form-control" name="mname" id="mname" placeholder="请输入MODEL名称"/>
+                            <label for="recipient-name" class="control-label">Model名称:</label>
+                            <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">部门名:</label>
-                            <input type="text" class="form-control" id="gid" name="gid"  placeholder="请输入部门名">
+                            <label for="recipient-name" class="control-label">NUM:</label>
+                            <input type="text" class="form-control" id="fnum" name="fnum"  placeholder="请输入NUM">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">文件名称:</label>
+                            <input type="text" class="form-control" id="fname" name="fname"  placeholder="请输入文件名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">版本:</label>
+                            <input type="text" class="form-control" id="fver" name="fver"  placeholder="请输入版本">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">上传文件:</label>
+                            <input type="file" id="file" name="file">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="addModel();" class="btn btn-primary">Save</button>
+                    <button type="button" onclick="addFile();" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
