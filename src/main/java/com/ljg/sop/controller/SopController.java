@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 
@@ -70,9 +71,18 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> addFile(UFile file){
+    public Map<String,Object> addFile(HttpServletRequest request, @RequestParam("file") MultipartFile file1,
+                                      @RequestParam("mid") Long mid,@RequestParam("fnum") String fnum,
+                                      @RequestParam("fname") String fname,@RequestParam("fver") String fver){
         resultMap.put("status",400);
-
+        UFile file = new UFile();
+        file.setFile(file1);
+        file.setFnum(fnum);
+        file.setFname(fname);
+        file.setMid(mid);
+        file.setFver(fver);
+        String fpath = file1.getOriginalFilename();
+        file.setFpath(fpath);
         String email = TokenManager.getToken().getEmail();
         file.setFuser(email);
         Date date = new Date();

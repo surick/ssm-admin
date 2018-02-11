@@ -1,6 +1,7 @@
 package com.ljg.common.model;
 
 import net.sf.json.JSONObject;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -20,7 +21,7 @@ public class UFile implements Serializable {
     private String fver;
     private String fuser;
     private String fpath;
-    private Byte file;
+    private MultipartFile file;
     private Date ftime;
 
 
@@ -100,13 +101,7 @@ public class UFile implements Serializable {
         this.fpath = fpath;
     }
 
-    public Byte getFile() {
-        return file;
-    }
 
-    public void setFile(Byte file) {
-        this.file = file;
-    }
 
     public Date getFtime() {
         return ftime;
@@ -114,5 +109,13 @@ public class UFile implements Serializable {
 
     public void setFtime(Date ftime) {
         this.ftime = ftime;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }

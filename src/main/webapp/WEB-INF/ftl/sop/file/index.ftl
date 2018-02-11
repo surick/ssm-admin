@@ -53,7 +53,6 @@
                     fnum = $('#fnum').val(),
                     fname = $('#fname').val(),
                     fver = $('#fver').val(),
-                    fpath = $('#file').val(),
                     file = new FormData($('#file')[0]);
             if($.trim(mid) == ''){
                 return layer.msg('model名称不能为空。',so.default),!1;
@@ -83,7 +82,7 @@
                 url: '${basePath}/sop/file/addFile.shtml',
                 type: 'POST',
                 cache: false,
-                data: {mid:mid,fnum:fnum,fname:fname,fver:fver,fpath:fpath,file:file},
+                data: {mid:mid,fnum:fnum,fname:fname,fver:fver,file:file},
                 processData: false,
                 contentType: false
             }).done(function(result) {
