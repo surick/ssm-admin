@@ -1,9 +1,11 @@
 package com.ljg.sop.controller;
 
 import com.ljg.common.controller.BaseController;
+import com.ljg.common.model.UFile;
 import com.ljg.common.model.UModel;
 import com.ljg.common.utils.LoggerUtils;
 import com.ljg.core.mybatis.page.Pagination;
+import com.ljg.sop.service.FileService;
 import com.ljg.sop.service.ModelService;
 import net.sf.json.JSONObject;
 import org.springframework.context.annotation.Scope;
@@ -29,6 +31,7 @@ import java.util.Map;
 public class SopController extends BaseController{
     @Resource
     ModelService modelService;
+    FileService fileService;
 
     @RequestMapping(value = "model/index")
     public ModelAndView index(String findContent, ModelMap modelMap, Integer pageNo){
@@ -52,6 +55,13 @@ public class SopController extends BaseController{
     @ResponseBody
     public Map<String,Object> deleteModelByMid(String mids){
         return modelService.deleteModelById(mids);
+    }
+
+    @RequestMapping(value = "file/index")
+    public ModelAndView file_index(String findContent,ModelMap modelMap,Integer pageNo){
+        modelMap.put("findContent",findContent);
+        Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
+        return new ModelAndView("sop/file/index","page",file);
     }
 
 

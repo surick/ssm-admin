@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>MODEL管理</title>
+    <title>文件管理</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
     <link   rel="shortcut icon" href="${basePath}/favicon.ico" />
@@ -13,64 +13,64 @@
     <script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script  src="${basePath}/js/shiro.demo.js"></script>
     <script >
-    so.init(function(){
-        //初始化全选。
-        so.checkBoxInit('#checkAll','[check=box]');
-        //全选
-        so.id('deleteAll').on('click',function(){
-            var checkeds = $('[check=box]:checked');
-            if(!checkeds.length){
-                return layer.msg('请选择要删除的选项。',so.default),!0;
-            }
-            var array = [];
-            checkeds.each(function(){
-                array.push(this.value);
+        so.init(function(){
+            //初始化全选。
+            so.checkBoxInit('#checkAll','[check=box]');
+            //全选
+            so.id('deleteAll').on('click',function(){
+                var checkeds = $('[check=box]:checked');
+                if(!checkeds.length){
+                    return layer.msg('请选择要删除的选项。',so.default),!0;
+                }
+                var array = [];
+                checkeds.each(function(){
+                    array.push(this.value);
+                });
+                return deleteById(array);
             });
-            return deleteById(array);
         });
-    });
-    <#--根据ID数组删除model-->
-    function deleteById(mids){
-        var index = layer.confirm("确定这"+ mids.length +"个model？",function(){
+        <#--根据ID数组删除model-->
+        function deleteById(mids){
+            var index = layer.confirm("确定这"+ mids.length +"个model？",function(){
+                var load = layer.load();
+                $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mids:mids.join(',')},function(result){
+                    layer.close(load);
+                    if(result && result.status != 200){
+                        return layer.msg(result.message,so.default),!0;
+                    }else{
+                        layer.msg(result.resultMsg);
+                        setTimeout(function(){
+                            $('#formId').submit();
+                        },1000);
+                    }
+                },'json');
+                layer.close(index);
+            });
+        }
+        <#--添加model-->
+        function addModel(){
+            var mname = $('#mname').val(),
+                    gid  = $('#gid').val();
+            if($.trim(mname) == ''){
+                return layer.msg('model名称不能为空。',so.default),!1;
+            }
+            if($.trim(gid) == ''){
+                return layer.msg('部门名不能为空。',so.default),!1;
+            }
+        <#--loding-->
             var load = layer.load();
-            $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mids:mids.join(',')},function(result){
+            $.post('${basePath}/sop/model/addModel.shtml',{mname:mname,gid:gid},function(result){
                 layer.close(load);
                 if(result && result.status != 200){
-                    return layer.msg(result.message,so.default),!0;
-                }else{
-                    layer.msg(result.resultMsg);
-                    setTimeout(function(){
-                        $('#formId').submit();
-                    },1000);
+                    return layer.msg(result.message,so.default),!1;
                 }
+                layer.msg('添加成功。');
+                setTimeout(function(){
+                    $('#formId').submit();
+                },1000);
             },'json');
-            layer.close(index);
-        });
-    }
-    <#--添加model-->
-    function addModel(){
-        var mname = $('#mname').val(),
-                gid  = $('#gid').val();
-        if($.trim(mname) == ''){
-            return layer.msg('model名称不能为空。',so.default),!1;
         }
-        if($.trim(gid) == ''){
-            return layer.msg('部门名不能为空。',so.default),!1;
-        }
-    <#--loding-->
-        var load = layer.load();
-        $.post('${basePath}/sop/model/addModel.shtml',{mname:mname,gid:gid},function(result){
-            layer.close(load);
-            if(result && result.status != 200){
-                return layer.msg(result.message,so.default),!1;
-            }
-            layer.msg('添加成功。');
-            setTimeout(function(){
-                $('#formId').submit();
-            },1000);
-        },'json');
-    }
-</script>
+    </script>
 </head>
 <body data-target="#one" data-spy="scroll">
 <#--引入头部-->
@@ -78,15 +78,15 @@
 <div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
     <div class="row">
     <#--引入左侧菜单-->
-				<@_left.sop 1/>
+        <@_left.sop 2/>
         <div class="col-md-10">
-            <h2>MODEL管理</h2>
+            <h2>文件管理</h2>
             <hr>
             <form method="post" action="" id="formId" class="form-inline">
                 <div clss="well">
                     <div class="form-group">
                         <input type="text" class="form-control" style="width: 300px;" value="${findContent?default('')}"
-                               name="findContent" id="findContent" placeholder="输入部门/Model名称">
+                               name="findContent" id="findContent" placeholder="输入文件名称">
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>

@@ -84,12 +84,12 @@
                   </a>
               </li>
 			  <li class="${(index==2)?string('active',' ')} dropdown">
-                  <a href="${basePath}/sop/allocation.shtml">
+                  <a href="${basePath}/sop/file/index.shtml">
                       <i class="glyphicon glyphicon-chevron-right"></i>文件管理
                   </a>
               </li>
 			  <li class="${(index==3)?string('active',' ')} dropdown">
-                  <a href="${basePath}/sop/index.shtml">
+                  <a href="${basePath}/sop/log/index.shtml">
                       <i class="glyphicon glyphicon-chevron-right"></i>日志管理
                   </a>
               </li>
