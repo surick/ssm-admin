@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.Map;
 
@@ -71,23 +72,19 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> addFile(HttpServletRequest request, @RequestParam("file") MultipartFile file1,
-                                      @RequestParam("mid") Long mid,@RequestParam("fnum") String fnum,
-                                      @RequestParam("fname") String fname,@RequestParam("fver") String fver){
+    public Map<String,Object> addFile(HttpServletRequest request,HttpServletResponse response,
+                                      @RequestParam(value = "file", required = false) MultipartFile file,
+                                      UFile ufile) throws Exception{
         resultMap.put("status",400);
-        UFile file = new UFile();
-        file.setFile(file1);
-        file.setFnum(fnum);
-        file.setFname(fname);
-        file.setMid(mid);
-        file.setFver(fver);
-        String fpath = file1.getOriginalFilename();
-        file.setFpath(fpath);
+        byte[] filebytes = file.getBytes();
+        ufile.setFile(filebytes);
+        String fpath = file.getOriginalFilename();
+        ufile.setFpath(fpath);
         String email = TokenManager.getToken().getEmail();
-        file.setFuser(email);
+        ufile.setFuser(email);
         Date date = new Date();
-        file.setFtime(date);
-        file = fileService.addFile(file);
+        ufile.setFtime(date);
+        fileService.addFile(ufile);
         LoggerUtils.fmtDebug(getClass(), "添加文件完毕！", JSONObject.fromObject(file).toString());
         resultMap.put("message","添加文件成功");
         resultMap.put("status",200);

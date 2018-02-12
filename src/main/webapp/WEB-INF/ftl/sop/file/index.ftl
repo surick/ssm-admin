@@ -31,7 +31,7 @@
         });
         <#--根据ID数组删除model-->
         function deleteById(fids){
-            var index = layer.confirm("确定这"+ mids.length +"个文件？",function(){
+            var index = layer.confirm("确定这"+ fids.length +"个文件？",function(){
                 var load = layer.load();
                 $.post('${basePath}/sop/file/deleteFileByFid.shtml',{fids:fids.join(',')},function(result){
                     layer.close(load);
@@ -49,11 +49,17 @@
         }
         <#--添加model-->
         function addFile(){
+            var formdata = new FormData;
             var mid = $('#mid').val(),
                     fnum = $('#fnum').val(),
                     fname = $('#fname').val(),
-                    fver = $('#fver').val(),
-                    file = new FormData($('#file')[0]);
+                    fver = $('#fver').val();
+            var fileObj = document.getElementById("file").files[0];
+            formdata.append("mid",mid);
+            formdata.append("fnum",fnum);
+            formdata.append("fname",fname);
+            formdata.append("fver",fver);
+            formdata.append("file",fileObj);
             if($.trim(mid) == ''){
                 return layer.msg('model名称不能为空。',so.default),!1;
             }
@@ -82,7 +88,7 @@
                 url: '${basePath}/sop/file/addFile.shtml',
                 type: 'POST',
                 cache: false,
-                data: {mid:mid,fnum:fnum,fname:fname,fver:fver,file:file},
+                data: formdata,
                 processData: false,
                 contentType: false
             }).done(function(result) {
@@ -174,7 +180,7 @@
                     <h4 class="modal-title" id="addFileLabel">添加文件</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="boxFileForm">
+                    <form id="boxFileForm" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Model名称:</label>
                             <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>

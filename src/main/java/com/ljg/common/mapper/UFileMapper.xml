@@ -46,7 +46,7 @@
     <insert id="addFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.ljg.common.model.UFile" >
         insert into sop_file (mid, fnum, fname,fver,fuser,fpath,file,ftime)
         values (#{mid,jdbcType=BIGINT}, #{fnum,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, #{fver,jdbcType=VARCHAR},
-             #{fuser,jdbcType=VARCHAR}, #{fpath,jdbcType=VARCHAR}, #{file,jdbcType=BLOB}, #{ftime,jdbcType=DATE})
+             #{fuser,jdbcType=VARCHAR}, #{fpath,jdbcType=VARCHAR}, #{file,jdbcType=BLOB,typeHandler=org.apache.ibatis.type.BlobTypeHandler}, #{ftime,jdbcType=DATE})
     </insert>
 
 </mapper>
