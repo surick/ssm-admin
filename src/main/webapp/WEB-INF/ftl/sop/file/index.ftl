@@ -180,7 +180,7 @@
                     <h4 class="modal-title" id="addFileLabel">添加文件</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="boxFileForm" enctype="multipart/form-data">
+                    <form id="boxFileForm">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Model名称:</label>
                             <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
