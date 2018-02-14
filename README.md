@@ -4,8 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
 
 ## 前言
-基于权限系统附加各种业务模块
-
+学习进阶开发
 ## 项目介绍
 
 　　Privilege Management System Based on SSM + Redis + Freemarker + Shiro
