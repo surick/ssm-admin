@@ -48,7 +48,7 @@
                 layer.close(index);
             });
         }
-        <#--添加model-->
+        <#--&lt;#&ndash;添加model&ndash;&gt;
         function addFile(){
             var formdata = new FormData;
             var mid = $('#mid').val(),
@@ -73,7 +73,7 @@
             if($.trim(fver) == ''){
                 return layer.msg('版本不能为空。',so.default),!1;
             }
-        <#--loding-->
+        &lt;#&ndash;loding&ndash;&gt;
             var load = layer.load();
             /*$.post('${basePath}/sop/file/addFile.shtml',{mid:mid,fnum:fnum,fname:fname,fver:fver,fpath:fpath,file:file},function(result){
                 layer.close(load);
@@ -102,7 +102,7 @@
                     $('#formId').submit();
                 },1000);
             });
-        }
+        }-->
     </script>
 </head>
 <body data-target="#one" data-spy="scroll">
@@ -119,7 +119,7 @@
                 <div clss="well">
                     <div class="form-group">
                         <input type="text" class="form-control" style="width: 300px;" value="${findContent?default('')}"
-                               name="findContent" id="findContent" placeholder="输入文件名称">
+                               name="findContent" id="findContent" placeholder="输入文件名称/上传人">
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>
@@ -145,16 +145,16 @@
 								<tr>
                                     <td><input value="${it.fid}" check='box' type="checkbox" /></td>
                                     <td>${it.fnum?default('-')}</td>
-                                    <td>${it.mname?default('-')}</td>
+                                    <td>${it.mid?default('-')}</td>
                                     <td>${it.fname?default('-')}</td>
                                     <td>${it.fpath?default('-')}</td>
                                     <td>${it.fver?default('-')}</td>
                                     <td>${it.fuser?default('-')}</td>
-                                    <td>${it.ftime?default('-')}</td>
+                                    <td>${it.ftime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                     <td>
-                                        <i class="glyphicon glyphicon-eye-open"></i><a href="javascript:deleteById([${it.mid}]);">查看</a>
-                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:deleteById([${it.mid}]);">更新</a>
-                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
+                                        <i class="glyphicon glyphicon-eye-open"></i><a href="javascript:deleteById([${it.fid}]);">查看</a>
+                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:deleteById([${it.fid}]);">更新</a>
+                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
                                     </td>
                                 </tr>
                             </#list>

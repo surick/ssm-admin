@@ -80,7 +80,7 @@
     <#--引入左侧菜单-->
 				<@_left.sop 1/>
         <div class="col-md-10">
-            <h2>MODEL管理</h2>
+            <h2>Model管理</h2>
             <hr>
             <form method="post" action="" id="formId" class="form-inline">
                 <div clss="well">

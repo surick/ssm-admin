@@ -10,10 +10,10 @@
         <result column="fuser" property="fuser" jdbcType="VARCHAR" />
         <result column="fpath" property="fpath" jdbcType="VARCHAR" />
         <result column="file" property="file" jdbcType="BLOB" />
-        <result column="ftime" property="ftime" jdbcType="DATE" />
+        <result column="ftime" property="ftime" jdbcType="TIMESTAMP" />
     </resultMap>
     <sql id="Base_Column_List" >
-        fid,mid,fnum,fname,fver,fuser,fpath,file,ftime
+        fid,mid,fnum,fname,fver,fuser,fpath,ftime
     </sql>
     <sql id="limit_sql">
         <if test="page_sql != null and page_sql != ''">
@@ -26,7 +26,7 @@
             <if test="findContent != null and findContent !='' " >
                 and (
                 LOWER(fname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%")) or
-                LOWER(mname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%"))
+                LOWER(fuser) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%"))
                 )
             </if>
         </where>
@@ -34,19 +34,19 @@
     <select id="findAll" resultMap="BaseResultMap" >
         select
         <include refid="Base_Column_List" />
-        from sop_model
+        from sop_file
         <include refid="where_all"/>
         <include refid="limit_sql" />
     </select>
     <select id="findCount" resultMap="BaseResultMap" >
-        select count(mid) from  sop_model
+        select count(fid) from sop_file
         <include refid="where_all" />
     </select>
 
     <insert id="addFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.ljg.common.model.UFile" >
         insert into sop_file (mid, fnum, fname,fver,fuser,fpath,file,ftime)
         values (#{mid,jdbcType=BIGINT}, #{fnum,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, #{fver,jdbcType=VARCHAR},
-             #{fuser,jdbcType=VARCHAR}, #{fpath,jdbcType=VARCHAR}, #{file,jdbcType=BLOB,typeHandler=org.apache.ibatis.type.BlobTypeHandler}, #{ftime,jdbcType=DATE})
+             #{fuser,jdbcType=VARCHAR}, #{fpath,jdbcType=VARCHAR}, #{file,jdbcType=BLOB,typeHandler=org.apache.ibatis.type.BlobTypeHandler}, #{ftime,jdbcType=TIMESTAMP})
     </insert>
 
 </mapper>

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.Map;
 
 /**
@@ -65,15 +65,15 @@ public class SopController extends BaseController{
     }
 
     @RequestMapping(value = "file/index")
-    public ModelAndView file_index(){
-       /* modelMap.put("findContent",findContent);
-        Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);*/
-        return new ModelAndView("sop/file/index");
+    public ModelAndView file_index(String findContent, ModelMap modelMap, Integer pageNo){
+        modelMap.put("findContent",findContent);
+        Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
+        return new ModelAndView("sop/file/index","page",file);
     }
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> addFile(MultipartFile sop,UFile ufile) throws Exception{
+    public ModelAndView addFile(MultipartFile sop,UFile ufile,String findContent, ModelMap modelMap, Integer pageNo) throws Exception{
         resultMap.put("status",400);
         byte[] filebytes = sop.getBytes();
         ufile.setFile(filebytes);
@@ -81,13 +81,17 @@ public class SopController extends BaseController{
         ufile.setFpath(fpath);
         String email = TokenManager.getToken().getEmail();
         ufile.setFuser(email);
-        Date date = new Date();
-        ufile.setFtime(date);
+        //Date date = new Date();
+        //ufile.setFtime(date);
+        Timestamp ftime = new Timestamp(System.currentTimeMillis());
+        ufile.setFtime(ftime);
         fileService.addFile(ufile);
         //LoggerUtils.fmtDebug(getClass(), "添加文件完毕！", JSONObject.fromObject(ufile).toString());
         resultMap.put("message","添加文件成功");
         resultMap.put("status",200);
-        return resultMap;
+        modelMap.put("findContent",findContent);
+        Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
+        return new ModelAndView("sop/file/index","page",file);
     }
 
 

@@ -3,7 +3,7 @@ package com.ljg.common.model;
 import net.sf.json.JSONObject;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Timestamp;
 
 /**
  * ${DESCRIPTION}
@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class UFile implements Serializable {
     private static final long serialVersionUID = 1L;
-    //private Long fid;
+    private Long fid;
     private Long mid;
     private String fnum;
     private String fname;
@@ -21,13 +21,13 @@ public class UFile implements Serializable {
     private String fuser;
     private String fpath;
     private byte[] file;
-    private Date ftime;
+    private Timestamp ftime;
 
 
 
     public UFile(){}
     public UFile(UFile file){
-        //this.fid = file.getFid();
+        this.fid = file.getFid();
         this.mid = file.getMid();
         this.fnum = file.getFnum();
         this.fname = file.getFname();
@@ -102,19 +102,27 @@ public class UFile implements Serializable {
 
 
 
-    public Date getFtime() {
-        return ftime;
-    }
-
-    public void setFtime(Date ftime) {
-        this.ftime = ftime;
-    }
-
     public byte[] getFile() {
         return file;
     }
 
     public void setFile(byte[] file) {
         this.file = file;
+    }
+
+    public Long getFid() {
+        return fid;
+    }
+
+    public void setFid(Long fid) {
+        this.fid = fid;
+    }
+
+    public Timestamp getFtime() {
+        return ftime;
+    }
+
+    public void setFtime(Timestamp ftime) {
+        this.ftime = ftime;
     }
 }
