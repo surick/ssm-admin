@@ -9,19 +9,17 @@ import com.ljg.core.shiro.token.manager.TokenManager;
 import com.ljg.sop.service.FileService;
 import com.ljg.sop.service.ModelService;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.Map;
 
@@ -35,9 +33,12 @@ import java.util.Map;
 @Scope(value = "prototype")
 @RequestMapping("sop")
 public class SopController extends BaseController{
-    @Resource
-    ModelService modelService;
+    @Autowired
+    @Qualifier("fs")
     FileService fileService;
+    @Autowired
+    @Qualifier("ms")
+    ModelService modelService;
 
     @RequestMapping(value = "model/index")
     public ModelAndView index(String findContent, ModelMap modelMap, Integer pageNo){
@@ -72,20 +73,18 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> addFile(HttpServletRequest request,HttpServletResponse response,
-                                      @RequestParam(value = "file", required = false) MultipartFile file,
-                                      UFile ufile) throws Exception{
+    public Map<String,Object> addFile(MultipartFile sop,UFile ufile) throws Exception{
         resultMap.put("status",400);
-        byte[] filebytes = file.getBytes();
+        byte[] filebytes = sop.getBytes();
         ufile.setFile(filebytes);
-        String fpath = file.getOriginalFilename();
+        String fpath = sop.getOriginalFilename();
         ufile.setFpath(fpath);
         String email = TokenManager.getToken().getEmail();
         ufile.setFuser(email);
         Date date = new Date();
         ufile.setFtime(date);
         fileService.addFile(ufile);
-        LoggerUtils.fmtDebug(getClass(), "添加文件完毕！", JSONObject.fromObject(file).toString());
+        //LoggerUtils.fmtDebug(getClass(), "添加文件完毕！", JSONObject.fromObject(ufile).toString());
         resultMap.put("message","添加文件成功");
         resultMap.put("status",200);
         return resultMap;

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>文件管理</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
     <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
     <link   rel="shortcut icon" href="${basePath}/favicon.ico" />
     <link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
@@ -54,7 +55,7 @@
                     fnum = $('#fnum').val(),
                     fname = $('#fname').val(),
                     fver = $('#fver').val();
-            var fileObj = document.getElementById("file").files[0];
+            var fileObj = document.getElementById("sop").files[0];
             formdata.append("mid",mid);
             formdata.append("fnum",fnum);
             formdata.append("fname",fname);
@@ -180,7 +181,7 @@
                     <h4 class="modal-title" id="addFileLabel">添加文件</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="boxFileForm">
+                    <form id="boxFileForm" action="/sop/file/addFile.shtml" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Model名称:</label>
                             <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
@@ -199,13 +200,13 @@
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">上传文件:</label>
-                            <input type="file" id="file" name="file">
+                            <input type="file" id="sop" name="sop">
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="addFile();" class="btn btn-primary">Save</button>
+                    <input type="submit" value="发布" class="btn btn-primary">
+                    </form>
                 </div>
             </div>
         </div>

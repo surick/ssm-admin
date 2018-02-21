@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,7 +19,7 @@ import java.util.Map;
  * @author w24164
  * @create 2018-02-08 15:28
  */
-@Service
+@Service("ms")
 public class ModelServiceImpl extends BaseMybatisDao<UModelMapper> implements ModelService{
     @Autowired
     UModelMapper modelMapper;

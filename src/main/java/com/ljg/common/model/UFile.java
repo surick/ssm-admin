@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class UFile implements Serializable {
     private static final long serialVersionUID = 1L;
-    private Long fid;
+    //private Long fid;
     private Long mid;
     private String fnum;
     private String fname;
@@ -27,7 +27,7 @@ public class UFile implements Serializable {
 
     public UFile(){}
     public UFile(UFile file){
-        this.fid = file.getFid();
+        //this.fid = file.getFid();
         this.mid = file.getMid();
         this.fnum = file.getFnum();
         this.fname = file.getFname();
@@ -44,13 +44,13 @@ public class UFile implements Serializable {
         return JSONObject.fromObject(this).toString();
     }
 
-    public Long getFid() {
+   /* public Long getFid() {
         return fid;
     }
 
     public void setFid(Long fid) {
         this.fid = fid;
-    }
+    }*/
 
     public Long getMid() {
         return mid;

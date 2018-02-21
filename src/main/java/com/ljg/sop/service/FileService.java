@@ -12,7 +12,7 @@ import java.util.Map;
  * @create 2018-02-11 10:12
  */
 public interface FileService {
-    UFile addFile(UFile file);
+    String addFile(UFile file);
     Pagination<UFile> findPage(Map<String,Object> resultMap,Integer pageNo,
                                Integer pageSize);
 }
