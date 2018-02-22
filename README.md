@@ -10,6 +10,7 @@
 　　Privilege Management System Based on SSM + Redis + Freemarker + Shiro
 
 ### 技术选型
+列表为目前使用的技术以及后续会更新的技术。
 
 #### 后端技术:
 技术 | 名称 | 官网
@@ -25,7 +26,7 @@ Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.
 FluentValidator | 校验框架  | [https://github.com/neoremind/fluent-validator](https://github.com/neoremind/fluent-validator)
 Thymeleaf | 模板引擎  | [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
 Velocity | 模板引擎  | [http://velocity.apache.org/](http://velocity.apache.org/)
-FreeMark | 模板引擎  | [https://freemarker.apache.org/](https://freemarker.apache.org/)
+FreeMarker | 模板引擎  | [https://freemarker.apache.org/](https://freemarker.apache.org/)
 ZooKeeper | 分布式协调服务  | [http://zookeeper.apache.org/](http://zookeeper.apache.org/)
 Dubbo | 分布式服务框架  | [http://dubbo.io/](http://dubbo.io/)
 TBSchedule & elastic-job | 分布式调度框架  | [https://github.com/dangdangdotcom/elastic-job](https://github.com/dangdangdotcom/elastic-job)
@@ -60,6 +61,7 @@ jQuery EasyUI | 基于jQuery的UI插件集合体  | [http://www.jeasyui.com](htt
 React | 界面构建框架  | [https://github.com/facebook/react](https://github.com/facebook/react)
 Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://github.com/pandao/editor.md)
 ## 环境搭建
+推荐使用IDEA开发工具clone项目到本地，无法正常启动请检查redis和数据库是否正常启动，配置是否正确。
 
 #### 开发工具:
 - MySql: 数据库
@@ -79,8 +81,6 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 - ActiveMQ
 - Dubbo-admin
 - Dubbo-monitor
-
-### 工具安装
 
 ### 资源下载
 
