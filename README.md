@@ -7,7 +7,7 @@
     Privilege Management System Based on SSM + Redis + Freemarker + Shiro
 ## 项目介绍
 
-　　Privilege Management System Based on SSM + Redis + Freemarker + Shiro
+Privilege Management System Based on SSM + Redis + Freemarker + Shiro
 
 ### 技术选型
 列表为目前使用的技术以及后续会更新的技术。
