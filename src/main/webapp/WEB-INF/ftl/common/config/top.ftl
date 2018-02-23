@@ -76,6 +76,19 @@
                       </ul>
                   	</li>
 				  </@shiro.hasAnyRoles>
+			  	<#--拥有 角色666666(文件管理）-->
+				  <@shiro.hasAnyRoles name='888888,666666'>
+				  	<li class="dropdown ${(index==5)?string('active','')}">
+                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/pis/index.shtml">
+                            设备监控<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${basePath}/pis/index.shtml">SMT产线</a></li>
+                            <li><a href="${basePath}/pis/index.shtml">服务器状态</a></li>
+                            <li><a href="${basePath}/pis/index.shtml">待定</a></li>
+                        </ul>
+                    </li>
+				  </@shiro.hasAnyRoles>
 	          </ul>
 	           <ul class="nav navbar-nav  pull-right" >
 				<li class="dropdown ${(index==10)?string('active','')}" style="color:#fff;">
