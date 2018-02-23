@@ -35,8 +35,8 @@
 	                <input type="text" name="vcode"   placeholder="Verification code" style="width: 110px; margin-left: -8px; margin-right: 8px;">
                 	<img src="${basePath}/open/getGifCode.shtml" />
                 </div>
-                <button type="button" class="register">Register</button>
-                <button type="button" id="login" >Login</button>
+                <button type="button" class="register">Sign up</button>
+                <button type="button" id="login" >Sign in</button>
                 <div class="error"><span>+</span></div>
             </form>
         </div>

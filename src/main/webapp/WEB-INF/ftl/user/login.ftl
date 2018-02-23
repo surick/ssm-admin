@@ -18,7 +18,7 @@
 			canvas{position: fixed; top: 0px; left: 0px; }
 		</style>
     </head>
-
+    <div id="particles-js"></div>
     <body id="body">
         <div class="page-container">
             <h1>ssm-admin</h1>
@@ -26,13 +26,19 @@
                 <input type="text" name="account" class="username" placeholder="Email Account">
                 <input type="password" name="password" class="password" placeholder="Password">
                 <div style="text-align: left; margin-left: 10px;">
-                <label><input type="checkbox" checked="checked"  id="rememberMe"style="width: 10px; height: 10px;">记住我</label>
+                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">Remember Me</label>
                 </div>
-                <button type="button" id="login">登录</button>
-                <button type="button" id="register" class="register">注册</button>
-                
+                <button type="button" id="login">Sign in</button>
+                <button type="button" id="register" class="register">Sign up</button>
                 <div class="error"><span>+</span></div>
             </form>
+            <div class="connect">
+                <p>Or connect with:</p>
+                <p>
+                    <a title="使用QQ登录" class="qq" href="#"></a>
+                    <a title="使用微信登录" class="weixin" href="#"></a>
+                </p>
+            </div>
         </div>
         <!-- Javascript -->
         <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
@@ -123,6 +129,7 @@
 			});
         </script>
     </body>
-
+	<#--<script src="${basePath}/js/common/particles/particles.js"></script>
+    <script src="${basePath}/js/common/particles/app.js"></script>-->
 </html>
 
