@@ -7,9 +7,10 @@
     Privilege Management System Based on SSM + Redis + Freemarker + Shiro
 ## 项目介绍
 
-　　Privilege Management System Based on SSM + Redis + Freemarker + Shiro
+Privilege Management System Based on SSM + Redis + Freemarker + Shiro
 
 ### 技术选型
+列表为目前使用的技术以及后续会更新的技术。
 
 #### 后端技术:
 技术 | 名称 | 官网
@@ -25,7 +26,7 @@ Druid | 数据库连接池  | [https://github.com/alibaba/druid](https://github.
 FluentValidator | 校验框架  | [https://github.com/neoremind/fluent-validator](https://github.com/neoremind/fluent-validator)
 Thymeleaf | 模板引擎  | [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
 Velocity | 模板引擎  | [http://velocity.apache.org/](http://velocity.apache.org/)
-FreeMark | 模板引擎  | [https://freemarker.apache.org/](https://freemarker.apache.org/)
+FreeMarker | 模板引擎  | [https://freemarker.apache.org/](https://freemarker.apache.org/)
 ZooKeeper | 分布式协调服务  | [http://zookeeper.apache.org/](http://zookeeper.apache.org/)
 Dubbo | 分布式服务框架  | [http://dubbo.io/](http://dubbo.io/)
 TBSchedule & elastic-job | 分布式调度框架  | [https://github.com/dangdangdotcom/elastic-job](https://github.com/dangdangdotcom/elastic-job)
@@ -60,6 +61,7 @@ jQuery EasyUI | 基于jQuery的UI插件集合体  | [http://www.jeasyui.com](htt
 React | 界面构建框架  | [https://github.com/facebook/react](https://github.com/facebook/react)
 Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://github.com/pandao/editor.md)
 ## 环境搭建
+推荐使用IDEA开发工具clone项目到本地，无法正常启动请检查redis和数据库是否正常启动，配置是否正确。
 
 #### 开发工具:
 - MySql: 数据库
@@ -80,8 +82,6 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 - Dubbo-admin
 - Dubbo-monitor
 
-### 工具安装
-
 ### 资源下载
 
 - JDK7 [http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html "JDK7")
@@ -93,6 +93,3 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 - Elastic Stack [https://www.elastic.co/downloads](https://www.elastic.co/downloads "Elastic Stack")
 - Nginx [http://nginx.org/en/download.html](http://nginx.org/en/download.html "Nginx")
 - Jenkins [http://updates.jenkins-ci.org/download/war/](http://updates.jenkins-ci.org/download/war/ "Jenkins")
-- dubbo-admin-2.5.3 [http://download.csdn.net/detail/shuzheng5201314/9733652](http://download.csdn.net/detail/shuzheng5201314/9733652 "dubbo-admin-2.5.3")
-- dubbo-admin-2.5.4-SNAPSHOT-jdk8 [http://download.csdn.net/detail/shuzheng5201314/9733657](http://download.csdn.net/detail/shuzheng5201314/9733657 "dubbo-admin-2.5.4-SNAPSHOT-jdk8")
-
