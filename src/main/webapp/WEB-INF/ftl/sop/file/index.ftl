@@ -123,7 +123,7 @@
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>
-				         		<a class="btn btn-success" onclick="$('#addFile').modal();">增加文件</a>
+				         		<a class="btn btn-success" onclick="$('#addFile').modal();">填加文件</a>
 				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
 				         </span>
                 </div>

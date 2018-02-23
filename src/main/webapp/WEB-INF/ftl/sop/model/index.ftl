@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>MODEL管理</title>
+    <title>Model管理</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
     <link   rel="shortcut icon" href="${basePath}/favicon.ico" />
@@ -31,7 +31,7 @@
     });
     <#--根据ID数组删除model-->
     function deleteById(mids){
-        var index = layer.confirm("确定这"+ mids.length +"个model？",function(){
+        var index = layer.confirm("确定这"+ mids.length +"个Model？",function(){
             var load = layer.load();
             $.post('${basePath}/sop/model/deleteModelByMid.shtml',{mids:mids.join(',')},function(result){
                 layer.close(load);
@@ -52,7 +52,7 @@
         var mname = $('#mname').val(),
                 gid  = $('#gid').val();
         if($.trim(mname) == ''){
-            return layer.msg('model名称不能为空。',so.default),!1;
+            return layer.msg('Model名称不能为空。',so.default),!1;
         }
         if($.trim(gid) == ''){
             return layer.msg('部门名不能为空。',so.default),!1;
@@ -90,7 +90,7 @@
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary">查询</button>
-				         		<a class="btn btn-success" onclick="$('#addModel').modal();">增加MODEL</a>
+				         		<a class="btn btn-success" onclick="$('#addModel').modal();">增加Model</a>
 				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
 				         </span>
                 </div>
@@ -115,7 +115,7 @@
                             </#list>
                         <#else>
 							<tr>
-                                <td class="text-center danger" colspan="4">没有找到MODEL</td>
+                                <td class="text-center danger" colspan="4">没有找到Model</td>
                             </tr>
                         </#if>
                 </table>
@@ -133,13 +133,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="addModelLabel">添加MODEL</h4>
+                    <h4 class="modal-title" id="addModelLabel">添加Model</h4>
                 </div>
                 <div class="modal-body">
                     <form id="boxRoleForm">
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">MODEL名称:</label>
-                            <input type="text" class="form-control" name="mname" id="mname" placeholder="请输入MODEL名称"/>
+                            <label for="recipient-name" class="control-label">Model名称:</label>
+                            <input type="text" class="form-control" name="mname" id="mname" placeholder="请输入Model名称"/>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">部门名:</label>

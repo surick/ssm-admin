@@ -152,7 +152,7 @@ ul.cloud a:hover{border-radius:0;text-shadow:1px 1px 1px #000}
 .search-write-wrap .search-write-cont,.search-write-wrap .SMSearTxt{color:#56688a}
 .search-write-cont{background:rgba(0,0,0,0) none repeat scroll 0 0;border:0 none;float:left;font-family:"Microsoft YaHei";height:25px;line-height:25px;margin:6px 0 0 10px;outline:0 none;padding:0}
 .w464{width:464px}
-.quickdelete{background:#fff url("http://cdn.sojson.com/images/quickdelete.png") no-repeat scroll 7px 12px;display:none;height:32px;position:absolute;right:0;top:0;width:32px}
+.quickdelete{background:#fff url("/images/quickdelete.png") no-repeat scroll 7px 12px;display:none;height:32px;position:absolute;right:0;top:0;width:32px}
 .search-hint,.search-hint02{color:#c0c1c4;font-family:"Microsoft YaHei";font-size:14px;font-weight:normal;left:13px;letter-spacing:normal;margin-top:10px;position:absolute;top:0;z-index:0}
 .search-write-right{width:90px}
 .search-write-btn{width:90px;line-height:normal;outline:medium none}

@@ -97,3 +97,27 @@
         </div>
 	</@shiro.hasAnyRoles>
 </#macro>
+<#macro pis index>
+	<@shiro.hasAnyRoles name='888888,777777'>
+		<div id="one" class="col-md-2">
+            <ul data-spy="affix" class="nav nav-list nav-tabs nav-stacked bs-docs-sidenav dropdown affix" style="top: 100px; z-index: 100;">
+
+                <li class="${(index==1)?string('active',' ')}">
+                    <a href="${basePath}/pis/index.shtml">
+                        <i class="glyphicon glyphicon-chevron-right"></i>SMT产线
+                    </a>
+                </li>
+                <li class="${(index==2)?string('active',' ')} dropdown">
+                    <a href="${basePath}/pis/index.shtml">
+                        <i class="glyphicon glyphicon-chevron-right"></i>服务器状态
+                    </a>
+                </li>
+                <li class="${(index==3)?string('active',' ')} dropdown">
+                    <a href="${basePath}/pis/index.shtml">
+                        <i class="glyphicon glyphicon-chevron-right"></i>待定
+                    </a>
+                </li>
+            </ul>
+        </div>
+	</@shiro.hasAnyRoles>
+</#macro>
