@@ -4,7 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
 
 ## 前言
-基于ssm-admin权限后台整合自己的零散项目，主要目的为学习研究。
+基于ssm-admin权限后台整合零散项目，主要目的为学习研究。
 ## 项目介绍
 
 Privilege Management System Based on SSM + Redis + Freemarker + Shiro.
