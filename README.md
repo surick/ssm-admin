@@ -4,13 +4,13 @@
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
 
 ## 前言
-    Privilege Management System Based on SSM + Redis + Freemarker + Shiro
+基于ssm-admin权限后台整合自己的零散项目，主要目的为学习研究。
 ## 项目介绍
 
-Privilege Management System Based on SSM + Redis + Freemarker + Shiro
+Privilege Management System Based on SSM + Redis + Freemarker + Shiro.
 
 ### 技术选型
-列表为目前使用的技术以及后续会更新的技术。
+列表为目前使用的技术以及后续会使用的技术。
 
 #### 后端技术:
 技术 | 名称 | 官网
@@ -61,7 +61,7 @@ jQuery EasyUI | 基于jQuery的UI插件集合体  | [http://www.jeasyui.com](htt
 React | 界面构建框架  | [https://github.com/facebook/react](https://github.com/facebook/react)
 Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://github.com/pandao/editor.md)
 ## 环境搭建
-推荐使用IDEA开发工具clone项目到本地，无法正常启动请检查redis和数据库是否正常启动，配置是否正确。
+推荐使用IDEA开发工具clone项目到本地，无法正常启动请检查redis和数据库是否正确安装以及配置是否正确。
 
 #### 开发工具:
 - MySql: 数据库
@@ -74,7 +74,7 @@ Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://g
 - Navicat for MySQL: 数据库客户端
 
 #### 开发环境：
-- Jdk7+
+- Jdk8+
 - Mysql5.5+
 - Redis
 - Zookeeper
