@@ -27,17 +27,25 @@
         <div class="page-container" style="margin: 100px auto 0px;">
             <h1>注册</h1>
             <form id="_form" action="" method="post">
-                <input type="text" name="nickname" id="nickname" class="username" placeholder="Nickname">
-                <input type="text" name="email"  id="email" placeholder="Email Account">
-                <input type="password" name="pswd" id="password" class="password" placeholder="Password">
-                <input type="password" id="re_password"  placeholder="Repeat the password">
+                <input type="text" name="nickname" id="nickname" class="username" placeholder="请输入昵称">
+                <input type="text" name="email"  id="email" placeholder="请输入邮箱/账号，作为您以后登录使用">
+                <input type="password" name="pswd" id="password" class="password" placeholder="请输入密码">
+                <input type="password" id="re_password"  placeholder="请再次输入密码">
                 <div style="text-align: left; margin-left: 10px;" id="vcode">
-	                <input type="text" name="vcode"   placeholder="Verification code" style="width: 110px; margin-left: -8px; margin-right: 8px;">
+	                <input type="text" name="vcode"   placeholder="验证码" style="width: 110px; margin-left: -8px; margin-right: 8px;">
                 	<img src="${basePath}/open/getGifCode.shtml" />
                 </div>
                 <button type="button" class="register">注册</button>
                 <button type="button" id="login" >登录</button>
                 <div class="error"><span>+</span></div>
+                <footer class="home-footer">
+                    <div>
+                        <div>
+            <span class="copy">©<span>Jin(yzzxy.top) |  <a href="https://surick.github.io/ssm-admin" class="btn-link">项目介绍</a> | <a href="tencent://message/?Menu=yes&uin=793792709" class="btn-link">QQ</a> | <a href="https://weibo.com/u/2774951333" class="btn-link">微博</a> | <a href="mailto:jk103@qq.com" class="btn-link">邮箱</a>
+				| <a href="https://github.com/surick/ssm-admin" class="btn-link" target="_blank">GitHub</a> | <a href="https://gitee.com/surick/ssm-admin" class="btn-link" target="_blank">码云</a>
+        	</span></span></div>
+                    </div>
+                </footer>
             </form>
         </div>
 

@@ -10,7 +10,7 @@
 
 body {
     background: #f8f8f8;
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font: 400 16px/1.618 'PingFang SC','Helvetica Neue','Microsoft YaHei UI','Microsoft YaHei','Noto Sans CJK SC',Sathu,EucrosiaUPC,sans-serif;
     text-align: center;
     color: #fff;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 1.375rem;
     font-weight: 700;
     text-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
@@ -187,6 +187,39 @@ button:active {
 .connect a.weixin { background: url(/images/weixin.svg) center center no-repeat; }
 
 .connect a:hover { background-position: center bottom; }
+.home-footer>div {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+}
+.home-footer {
+    font: 400 16px/1.618 'PingFang SC','Helvetica Neue','Microsoft YaHei UI','Microsoft YaHei','Noto Sans CJK SC',Sathu,EucrosiaUPC,sans-serif;
+    font-size: .875rem;
+    line-height: 2;
+    width: 100%;
+    margin: 5.5vh 0;
+    text-align: center;
+    color: #fff;
+    display:block;
+}
+.home-footer a {
+    margin: 0 2px;
+}
+.btn-link, .btn-link a {
+    padding: 0;
+    color: #31b968;
+    border: none;
+    border-radius: 0;
+}
+.btn-link, .btn-link a {
+    color: #31b968;
+}
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+    outline: 0;
+}
 
 
 

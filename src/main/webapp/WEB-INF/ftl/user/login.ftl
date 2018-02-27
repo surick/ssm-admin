@@ -7,9 +7,9 @@
         <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
         <!-- CSS -->
-        <link rel="stylesheet" href="${basePath}/css/login/reset.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/supersized.css"/>
-        <link rel="stylesheet" href="${basePath}/css/login/style.css"/>
+        <link rel="stylesheet" href="${basePath}/css/login/reset.css">
+        <link rel="stylesheet" href="${basePath}/css/login/supersized.css">
+        <link rel="stylesheet" href="${basePath}/css/login/style.css">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="${basePath}/js/common/html5shiv.js"></script>
@@ -21,12 +21,12 @@
     <div id="particles-js"></div>
     <body id="body">
         <div class="page-container">
-            <h1>ssm-admin</h1>
+            <h1>登录</h1>
             <form id="_form" action="" method="post">
-                <input type="text" name="account" class="username" placeholder="邮箱">
-                <input type="password" name="password" class="password" placeholder="密码">
+                <input type="text" name="account" class="username" placeholder="邮箱/账号">
+                <input type="password" name="password" class="password" placeholder="请输入密码">
                 <div style="text-align: left; margin-left: 10px;">
-                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">记住我</label>
+                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">记住密码</label>
                 </div>
                 <button type="button" id="login">登录</button>
                 <button type="button" id="register" class="register">注册</button>
@@ -39,6 +39,17 @@
                     <a title="使用微信登录" class="weixin" href="#"></a>
                 </p>
             </div>
+            <footer class="home-footer">
+                <div>
+                    <div>
+            <span class="copy">©<span>Jin(yzzxy.top) |  <a href="https://surick.github.io/ssm-admin" class="btn-link">项目介绍</a> | <a href="tencent://message/?Menu=yes&uin=793792709" class="btn-link">QQ</a> | <a href="https://weibo.com/u/2774951333" class="btn-link">微博</a> | <a href="mailto:jk103@qq.com" class="btn-link">邮箱</a>
+				| <a href="https://github.com/surick/ssm-admin" class="btn-link" target="_blank">GitHub</a> | <a href="https://gitee.com/surick/ssm-admin" class="btn-link" target="_blank">码云</a>
+        	</span></span></div>
+                    <div>
+                        Privilege Management System Based on SSM + Redis + Freemarker + Shiro
+                    </div>
+                </div>
+            </footer>
         </div>
         <!-- Javascript -->
         <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
