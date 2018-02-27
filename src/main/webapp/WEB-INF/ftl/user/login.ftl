@@ -23,17 +23,17 @@
         <div class="page-container">
             <h1>ssm-admin</h1>
             <form id="_form" action="" method="post">
-                <input type="text" name="account" class="username" placeholder="Email Account">
-                <input type="password" name="password" class="password" placeholder="Password">
+                <input type="text" name="account" class="username" placeholder="邮箱">
+                <input type="password" name="password" class="password" placeholder="密码">
                 <div style="text-align: left; margin-left: 10px;">
-                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">Remember Me</label>
+                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">记住我</label>
                 </div>
-                <button type="button" id="login">Sign in</button>
-                <button type="button" id="register" class="register">Sign up</button>
+                <button type="button" id="login">登录</button>
+                <button type="button" id="register" class="register">注册</button>
                 <div class="error"><span>+</span></div>
             </form>
             <div class="connect">
-                <p>Or connect with:</p>
+                <p>社交帐号登录:</p>
                 <p>
                     <a title="使用QQ登录" class="qq" href="#"></a>
                     <a title="使用微信登录" class="weixin" href="#"></a>
