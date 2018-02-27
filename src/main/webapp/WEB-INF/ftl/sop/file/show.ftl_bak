@@ -1,0 +1,25 @@
+
+<%          String file_id = request.getQueryString();
+			String ip = request.getRemoteAddr();
+			Connection con =null;
+			ResultSet rs =null;
+			con = DBDao.getConnection();
+			Statement stmt = con.createStatement();
+			String sql1 = "insert into log(COMPUTER_IP,FILE_ID) values ('" + ip + "','"+file_id+"')";
+			stmt.executeUpdate(sql1);
+			String sql ="select FILE_URL,FILE_VER,FILE_ID from file where FILE_ID="+file_id+"";
+			rs = stmt.executeQuery(sql);
+			rs.next();
+			byte[] bs = rs.getBytes("FILE_URL");
+			request.getSession().setAttribute("ver", rs.getString("FILE_VER"));
+			request.getSession().setAttribute("id", rs.getString("FILE_ID"));
+
+			// 改成PDF类型 application/pdf;charset=UTF-8
+			response.setContentType("application/pdf;charset=UTF-8");
+			response.setHeader( "Pragma", "no-cache" );
+			response.setDateHeader("Expires", 0);
+			response.addHeader( "Cache-Control", "no-cache" ); // 浏览器和缓存服务器都不应该缓存页面信息
+
+			response.getOutputStream().write(bs);
+			DBDao.close(rs, stmt, con);
+%>

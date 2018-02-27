@@ -16,13 +16,13 @@
     <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/efe/esl/2-1-6/esl.js"></script> -->
     <script src="${basePath}/js/monitor/smt.js"></script>
 </head>
-<body data-target="#one" data-spy="scroll" style="padding:0px;margin:0px;background:#78c2c3">
+<body data-target="#one" data-spy="scroll" style="padding:0px;margin:0px;background:#ffffff">
 <#--引入头部-->
 <@_top.top 5/>
 <div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
     <div class="row">
     <#--引入左侧菜单-->
-    <@_left.monitor 1/>
+    <#--<@_left.monitor 1/>-->
         <div id="top">
             <select>
                 <option value=SMT>SMT</option>

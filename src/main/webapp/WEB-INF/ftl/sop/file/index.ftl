@@ -30,7 +30,7 @@
                 return deleteById(array);
             });
         });
-        <#--根据ID数组删除model-->
+        <#--根据ID数组删除文件-->
         function deleteById(fids){
             var index = layer.confirm("确定这"+ fids.length +"个文件？",function(){
                 var load = layer.load();
@@ -47,6 +47,21 @@
                 },'json');
                 layer.close(index);
             });
+        }
+        <#--根据id查看文件-->
+     /*   function showById(fid) {
+            //window.location.href="../../../../js/common/pdfjs/viewer.html?file=show.jsp?"+fid;
+            $.ajax({
+                url: '${basePath}/sop/file/showFile.shtml',
+                data: {
+                    fid: fid,
+                },
+                type: 'GET',
+            }).done(alert("success!"));
+        }*/
+        <#--根据id更新文件-->
+        function updateById() {
+
         }
         <#--&lt;#&ndash;添加model&ndash;&gt;
         function addFile(){
@@ -152,8 +167,8 @@
                                     <td>${it.fuser?default('-')}</td>
                                     <td>${it.ftime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                     <td>
-                                        <i class="glyphicon glyphicon-eye-open"></i><a href="javascript:deleteById([${it.fid}]);">查看</a>
-                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:deleteById([${it.fid}]);">更新</a>
+                                        <i class="glyphicon glyphicon-eye-open"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
+                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:updateById([${it.fid}]);">更新</a>
                                         <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
                                     </td>
                                 </tr>

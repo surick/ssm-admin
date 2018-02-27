@@ -48,7 +48,7 @@ require(
 
 			// 配置项
 			var option = {
-				backgroundColor : '#e0fcff',
+				backgroundColor : '#ffffff',
 				/*title : {
 					text : '设备监控',
 					textStyle : {
