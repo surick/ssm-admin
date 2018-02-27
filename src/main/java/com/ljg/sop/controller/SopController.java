@@ -94,5 +94,10 @@ public class SopController extends BaseController{
         return new ModelAndView("sop/file/index","page",file);
     }
 
+    @RequestMapping(value = "monitor/index")
+    public String monitor(){
+        return "monitor/index";
+    }
+
 
 }

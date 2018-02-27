@@ -79,13 +79,13 @@
 			  	<#--拥有 角色777777(设备监控）-->
 				  <@shiro.hasAnyRoles name='888888,777777'>
 				  	<li class="dropdown ${(index==5)?string('active','')}">
-                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/pis/index.shtml">
+                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/monitor/index.shtml">
                             设备监控<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="${basePath}/pis/index.shtml">SMT产线</a></li>
-                            <li><a href="${basePath}/pis/index.shtml">服务器状态</a></li>
-                            <li><a href="${basePath}/pis/index.shtml">待定</a></li>
+                            <li><a href="${basePath}/sop/monitor/index.shtml">设备监控</a></li>
+                            <li><a href="${basePath}/sop/monitor/index.shtml">服务器状态</a></li>
+                            <li><a href="${basePath}/sop/monitor/index.shtml">待定</a></li>
                         </ul>
                     </li>
 				  </@shiro.hasAnyRoles>
