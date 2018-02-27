@@ -39,6 +39,7 @@
         c.setMaxAge(500);
         response.addCookie(c);
         response.getOutputStream().write(bs);
+        out.clear();
     }catch (Exception e){
         System.out.println(e);
     }finally {
