@@ -15,7 +15,7 @@
           </button>
 	     </div>
 	     <div role="navigation" class="navbar-collapse collapse">
-	     		<a id="_logo"  href="${basePath}" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm">ssm-admin</a>
+	     		<a id="_logo"  href="${basePath}" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm"><img src="${basePath}/images/ssm-logo.png" height="35" width="80"></a>
 	          <ul class="nav navbar-nav" id="topMenu">
 				<li class="dropdown ${(index==1)?string('active','')}">
 					<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/user/index.shtml">
