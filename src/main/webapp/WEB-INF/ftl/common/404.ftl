@@ -122,7 +122,7 @@
 <body>
 <div class="box">
     <div class="clearfix">
-        <figure class="figure"><img src="https://static.segmentfault.com/v-5a7c12fe/global/img/404.svg" alt="杯具啊"></figure>
+        <figure class="figure"><img src="${basePath}/images/error/404.svg" alt="杯具啊"></figure>
 
         <h1>杯具啊!</h1>
 
@@ -135,5 +135,5 @@
     1024 © <a href="https://github.com/surick/ssm-admin">ssm-admin</a>
 </div>
 
-
-</body></html>
+</body>
+</html>

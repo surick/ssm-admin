@@ -183,8 +183,8 @@ button:active {
     -ms-transition: all .2s;
 }
 
-.connect a.qq { background: url(/images/qq.svg) center center no-repeat; }
-.connect a.weixin { background: url(/images/weixin.svg) center center no-repeat; }
+.connect a.qq { background: url(/images/login/qq.svg) center center no-repeat; }
+.connect a.weixin { background: url(/images/login/weixin.svg) center center no-repeat; }
 
 .connect a:hover { background-position: center bottom; }
 .home-footer>div {

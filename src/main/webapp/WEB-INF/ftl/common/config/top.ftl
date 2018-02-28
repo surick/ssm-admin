@@ -1,5 +1,5 @@
 <#macro top index>
-<script baseUrl="${basePath}" src="${basePath}/js/user.login.js"></script>
+<script baseUrl="${basePath}" src="${basePath}/js/login.js"></script>
 <#--<link href="${basePath}/css/common/fontawesome/fontawesome-all.min.css" rel="stylesheet">-->
 <#--CDN加载-->
 <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
           </button>
 	     </div>
 	     <div role="navigation" class="navbar-collapse collapse">
-	     		<a id="_logo"  href="${basePath}" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm"><img src="${basePath}/images/ssm-logo.png" height="35" width="80"></a>
+             <a id="_logo"  href="${basePath}" style="color:#fff; font-size: 24px;" class="navbar-brand hidden-sm"><img src="${basePath}/images/ssm-logo.png" height="35" width="80"></a>
 	          <ul class="nav navbar-nav" id="topMenu">
 				<li class="dropdown ${(index==1)?string('active','')}">
 					<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/user/index.shtml">

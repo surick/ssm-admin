@@ -122,7 +122,7 @@
 <body>
 <div class="box">
     <div class="clearfix">
-        <figure class="figure"><img src="https://static.segmentfault.com/v-5a7c12fe/global/img/500.svg" alt="难受啊"></figure>
+        <figure class="figure"><img src="${basePath}/images/error/500.svg" alt="难受啊"></figure>
 
         <h1>难受啊!</h1>
 
@@ -136,4 +136,5 @@
 </div>
 
 
-</body></html>
+</body>
+</html>
