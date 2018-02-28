@@ -128,7 +128,7 @@
                     </div>
                     <span class=""> <#--pull-right -->
 				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>查询</button>
-				         		<a class="btn btn-success" onclick="$('#addFile').modal();"><i class="fa fa-add"></i>发布文件</a>
+				         		<a class="btn btn-success" onclick="$('#addFile').modal();"><i class="fa fa-plus"></i>发布文件</a>
 				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i>Delete</button>
 				         </span>
                 </div>

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8" />
-		<title>资料修改 —个人中心</title>
+		<title>修改个人资料 —个人中心</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
@@ -21,20 +21,20 @@
 			<div class="row">
 				<@_left.user 1/>
 				<div class="col-md-10">
-					<h2>资料修改</h2>
+					<h2><i class="fa fa-edit"></i>修改个人资料</h2>
 					<hr>
 					<form id="formId" enctype="multipart/form-data" action="${basePath}/user/updateSelf.shtml" method="post">
 						  <input type="hidden" value="${token.id}" name="id"/>
 						  <div class="form-group">
-						    <label for="nickname">昵称</label>
+						    <label for="nickname"><i class="fa fa-qq"></i>昵称</label>
 						    <input type="text" class="form-control" autocomplete="off" id="nickname" maxlength="8" name="nickname" value="${token.nickname?default('未设置')}" placeholder="请输入昵称">
 						  </div>
 						  <div class="form-group">
-						    <label for="email">Email（不准修改）</label>
+							  <label for="email"><i class="fa fa-envelope"></i>Email/账户（禁止修改）</label>
 						    <input type="text" class="form-control " disabled autocomplete="off" id="email" maxlength="64" name="email" value="${token.email?default('未设置')}" placeholder="请输入帐号">
 						  </div>
 						  <div class="form-group">
-							  <button type="submit" class="btn btn-success">确定修改</button>
+							  <button type="submit" class="btn btn-success">保存修改</button>
 						  </div>
 						</form>
 					

@@ -18,23 +18,23 @@
 			<div class="row">
 				<@_left.user 1/>
 				<div class="col-md-10">
-					<h2>个人资料</h2>
+					<h2><i class="fa fa-user"></i> 个人资料</h2>
 					<hr>
 					<table class="table table-bordered">
 						<tr>
-							<th>昵称</th>
+							<th><i class="fa fa-qq"></i> 昵称</th>
 							<td>${token.nickname?default('未设置')}</td>
 						</tr>
 						<tr>
-							<th>Email/帐号</th>
+							<th><i class="fa fa-envelope"></i> Email/帐号</th>
 							<td>${token.email?default('未设置')}</td>
 						</tr>
 						<tr>
-							<th>创建时间</th>
+							<th><i class="fa fa-calendar"></i> 创建时间</th>
 							<td>${token.createTime?string('yyyy-MM-dd HH:mm')}</td>
 						</tr>
 						<tr>
-							<th>最后登录时间</th>
+							<th><i class="fa fa-calendar"></i> 最后登录时间</th>
 							<td>${token.lastLoginTime?string('yyyy-MM-dd HH:mm')}</td>
 						</tr>
 					</table>

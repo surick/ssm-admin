@@ -21,23 +21,23 @@
 			<div class="row">
 				<@_left.user 1/>
 				<div class="col-md-10">
-					<h2>密码修改</h2>
+					<h2><i class="fa fa-lock"></i>密码修改</h2>
 					<hr>
 					<form id="formId" enctype="multipart/form-data" action="${basePath}/user/updatePswd.shtml" method="post">
 						  <div class="form-group">
-						    <label for="pswd">原密码</label>
+						    <label for="pswd"><i class="fa fa-edit"></i>原密码</label>
 						    <input type="password" class="form-control" autocomplete="off" id="pswd" maxlength="20" name="pswd"  placeholder="请输入原密码">
 						  </div>
 						  <div class="form-group">
-						    <label for="newPswd">新密码</label>
+						    <label for="newPswd"><i class="fa fa-edit"></i>新密码</label>
 						    <input type="password" class="form-control" autocomplete="off" id="newPswd" maxlength="20" name="newPswd" placeholder="请输入新密码">
 						  </div>
 						  <div class="form-group">
-						    <label for="reNewPswd">新密码（再输入一次）</label>
+						    <label for="reNewPswd"><i class="fa fa-edit"></i>确认密码</label>
 						    <input type="password" class="form-control" autocomplete="off" id="reNewPswd" maxlength="20" name="reNewPswd"placeholder="请再次输入新密码">
 						  </div>
 						  <div class="form-group">
-							  <button type="submit" class="btn btn-success">确定修改</button>
+							  <button type="submit" class="btn btn-success">保存修改</button>
 						  </div>
 						</form>
 					
