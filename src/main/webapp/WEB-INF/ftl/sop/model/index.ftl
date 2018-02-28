@@ -89,9 +89,9 @@
                                name="findContent" id="findContent" placeholder="输入部门/Model名称">
                     </div>
                     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary">查询</button>
-				         		<a class="btn btn-success" onclick="$('#addModel').modal();">增加Model</a>
-				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-paw"></i>查询</button>
+				         		<a class="btn btn-success" onclick="$('#addModel').modal();"><i class="fa fa-plus"></i>添加Model</a>
+				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i>Delete</button>
 				         </span>
                 </div>
                 <hr>
@@ -109,13 +109,13 @@
                                     <td>${it.mname?default('-')}</td>
                                     <td>${it.gname?default('-')}</td>
                                     <td>
-                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
+                                        <i class="fa fa-trash"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
                                     </td>
                                 </tr>
                             </#list>
                         <#else>
 							<tr>
-                                <td class="text-center danger" colspan="4">没有找到Model</td>
+                                <td class="text-center danger" colspan="4"><i class="fa fa-undo"></i>没有找到Model</td>
                             </tr>
                         </#if>
                 </table>

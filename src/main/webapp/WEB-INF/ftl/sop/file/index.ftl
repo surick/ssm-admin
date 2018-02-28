@@ -127,9 +127,9 @@
                                name="findContent" id="findContent" placeholder="输入文件名称/上传人">
                     </div>
                     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary">查询</button>
-				         		<a class="btn btn-success" onclick="$('#addFile').modal();">填加文件</a>
-				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>查询</button>
+				         		<a class="btn btn-success" onclick="$('#addFile').modal();"><i class="fa fa-add"></i>发布文件</a>
+				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i>Delete</button>
 				         </span>
                 </div>
                 <hr>
@@ -157,9 +157,9 @@
                                     <td>${it.fuser?default('-')}</td>
                                     <td>${it.ftime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                     <td>
-                                        <i class="glyphicon glyphicon-eye-open"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
-                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:updateById(${it.fid});">更新</a>
-                                        <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
+                                        <i class="fa fa-eye"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
+                                        <i class="fa fa-edit"></i></i><a href="javascript:updateById(${it.fid});">更新</a>
+                                        <i class="fa fa-trash"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
                                     </td>
                                 </tr>
                             </#list>
