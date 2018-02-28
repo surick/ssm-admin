@@ -74,7 +74,7 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public ModelAndView addFile(MultipartFile sop,UFile ufile,String findContent, ModelMap modelMap, Integer pageNo)
+    public ModelAndView addFile(MultipartFile sop,UFile ufile)
             throws Exception{
         resultMap.put("status",400);
         byte[] filebytes = sop.getBytes();
@@ -91,9 +91,7 @@ public class SopController extends BaseController{
         //LoggerUtils.fmtDebug(getClass(), "添加文件完毕！", JSONObject.fromObject(ufile).toString());
         resultMap.put("message","添加文件成功");
         resultMap.put("status",200);
-        modelMap.put("findContent",findContent);
-        Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
-        return new ModelAndView("sop/file/index","page",file);
+        return new ModelAndView("redirect:/sop/file/index.shtml");
     }
 
     @RequestMapping(value = "file/deleteFileByFid",method = RequestMethod.POST)
@@ -109,11 +107,11 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/updateFile",method = RequestMethod.POST)
     @ResponseBody
-    public ModelAndView updateFile(MultipartFile sop,UFile uFile,String findContent,ModelMap modelMap,Integer pageNo)
+    public ModelAndView updateFile(MultipartFile sop,UFile uFile)
         throws Exception{
         resultMap.put("status",400);
         if(sop.isEmpty()){
-            return new ModelAndView("sop/file/index");
+            return new ModelAndView("/common/500");
         }else {
             byte[] filebytes = sop.getBytes();
             uFile.setFile(filebytes);
@@ -126,9 +124,7 @@ public class SopController extends BaseController{
             fileService.updateFile(uFile);
             resultMap.put("message","更新文件成功");
             resultMap.put("status",200);
-            modelMap.put("findContent",findContent);
-            Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
-            return new ModelAndView("sop/file/index","page",file);
+            return new ModelAndView("redirect:/sop/file/index.shtml");
         }
     }
 
