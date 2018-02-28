@@ -150,7 +150,7 @@
 								<tr>
                                     <td><input value="${it.fid}" check='box' type="checkbox" /></td>
                                     <td>${it.fnum?default('-')}</td>
-                                    <td>${it.mid?default('-')}</td>
+                                    <td>${it.mname?default('-')}</td>
                                     <td>${it.fname?default('-')}</td>
                                     <td>${it.fpath?default('-')}</td>
                                     <td>${it.fver?default('-')}</td>
@@ -189,7 +189,14 @@
                     <form id="boxFileForm" action="/sop/file/addFile.shtml" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Model名称:</label>
-                            <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
+                            <select name="mid" id="mid">
+                                <#if page?exists && page.list?size gt 0>
+                                    <#list page.list as it>
+                                        <option value="${it.mid}">${it.gname}&nbsp;&nbsp;&nbsp;&nbsp;${it.mname}</option>
+                                    </#list>
+                                </#if>
+                            </select>
+                            <#--<input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>-->
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">NUM:</label>
@@ -230,7 +237,14 @@
                         <input type="text" style="display: none" id="fid1" name="fid" />
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Model名称:</label>
-                            <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
+                            <select name="mid" id="mid">
+                                <#if page?exists && page.list?size gt 0>
+                                    <#list page.list as it>
+                                        <option value="${it.mid}">&nbsp;&nbsp;${it.gname}&nbsp;&nbsp;${it.mname}</option>
+                                    </#list>
+                                </#if>
+                            </select>
+                            <#--<input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>-->
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">NUM:</label>

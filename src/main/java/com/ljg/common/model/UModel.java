@@ -15,12 +15,14 @@ public class UModel implements Serializable {
     private Long mid;
     private String mname;
     private Long gid;
+    private String gname;
 
     public UModel(){}
     public UModel(UModel model){
         this.mid = model.getMid();
         this.mname = model.getMname();
         this.gid = model.getGid();
+        this.gname = model.getGname();
     }
 
 
@@ -50,5 +52,13 @@ public class UModel implements Serializable {
 
     public String toString() {
         return JSONObject.fromObject(this).toString();
+    }
+
+    public String getGname() {
+        return gname;
+    }
+
+    public void setGname(String gname) {
+        this.gname = gname;
     }
 }

@@ -26,7 +26,7 @@
                 <input type="text" name="account" class="username" placeholder="邮箱/账号">
                 <input type="password" name="password" class="password" placeholder="请输入密码">
                 <div style="text-align: left; margin-left: 10px;">
-                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 10px; height: 10px;">记住密码</label>
+                <label><input type="checkbox" checked="checked" id="rememberMe"style="width: 12px; height: 12px;">记住密码</label>
                 </div>
                 <button type="button" id="login">登录</button>
                 <button type="button" id="register" class="register">注册</button>

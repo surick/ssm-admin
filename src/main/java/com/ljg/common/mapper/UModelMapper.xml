@@ -5,9 +5,10 @@
         <id column="mid" property="mid" jdbcType="BIGINT" />
         <result column="mname" property="mname" jdbcType="VARCHAR" />
         <result column="gid" property="gid" jdbcType="BIGINT" />
+        <result column="gname" property="gname" jdbcType="VARCHAR" />
     </resultMap>
     <sql id="Base_Column_List" >
-        mid,mname,gid
+        mid,mname,gid,gname
     </sql>
     <sql id="limit_sql">
         <if test="page_sql != null and page_sql != ''">
@@ -16,6 +17,17 @@
     </sql>
 
     <sql id="where_all">
+        <where>
+            m.gid=g.gid
+            <if test="findContent != null and findContent !='' " >
+                and (
+                LOWER(mname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%")) or
+                LOWER(gid) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%"))
+                )
+            </if>
+        </where>
+    </sql>
+    <sql id="where_all2">
         <where>
             <if test="findContent != null and findContent !='' " >
                 and (
@@ -27,14 +39,14 @@
     </sql>
     <select id="findAll" resultMap="BaseResultMap" >
         select
-        <include refid="Base_Column_List" />
-        from sop_model
+        mid,mname,gname,m.gid
+        from sop_model m,sop_group g
         <include refid="where_all"/>
         <include refid="limit_sql" />
     </select>
     <select id="findCount" resultMap="BaseResultMap" >
         select count(mid) from  sop_model
-        <include refid="where_all" />
+        <include refid="where_all2" />
     </select>
     <!-- 根据MID查找 -->
     <select id="findModelByMid" resultMap="BaseResultMap">

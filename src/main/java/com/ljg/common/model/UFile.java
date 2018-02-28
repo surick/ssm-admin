@@ -22,6 +22,8 @@ public class UFile implements Serializable {
     private String fpath;
     private byte[] file;
     private Timestamp ftime;
+    private String mname;
+    private String gname;
 
 
 
@@ -124,5 +126,21 @@ public class UFile implements Serializable {
 
     public void setFtime(Timestamp ftime) {
         this.ftime = ftime;
+    }
+
+    public String getMname() {
+        return mname;
+    }
+
+    public void setMname(String mname) {
+        this.mname = mname;
+    }
+
+    public String getGname() {
+        return gname;
+    }
+
+    public void setGname(String gname) {
+        this.gname = gname;
     }
 }

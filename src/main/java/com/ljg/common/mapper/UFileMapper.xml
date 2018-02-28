@@ -11,6 +11,8 @@
         <result column="fpath" property="fpath" jdbcType="VARCHAR" />
         <result column="file" property="file" jdbcType="BLOB" />
         <result column="ftime" property="ftime" jdbcType="TIMESTAMP" />
+        <result column="mname" property="mname" jdbcType="VARCHAR" />
+        <result column="gname" property="gname" jdbcType="VARCHAR" />
     </resultMap>
     <sql id="Base_Column_List" >
         fid,mid,fnum,fname,fver,fuser,fpath,ftime
@@ -23,6 +25,17 @@
 
     <sql id="where_all">
         <where>
+            f.mid=m.mid and m.gid = g.gid
+            <if test="findContent != null and findContent !='' " >
+                and (
+                LOWER(fname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%")) or
+                LOWER(fuser) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%"))
+                )
+            </if>
+        </where>
+    </sql>
+    <sql id="where_all2">
+        <where>
             <if test="findContent != null and findContent !='' " >
                 and (
                 LOWER(fname) like  LOWER(CONCAT("%",#{findContent,jdbcType=VARCHAR},"%")) or
@@ -33,14 +46,14 @@
     </sql>
     <select id="findAll" resultMap="BaseResultMap" >
         select
-        <include refid="Base_Column_List" />
-        from sop_file
+        fid,f.mid,fnum,fname,fver,fuser,fpath,ftime,mname,gname
+        from sop_file f,sop_model m,sop_group g
         <include refid="where_all"/>
         <include refid="limit_sql" />
     </select>
     <select id="findCount" resultMap="BaseResultMap" >
         select count(fid) from sop_file
-        <include refid="where_all" />
+        <include refid="where_all2" />
     </select>
 
     <insert id="addFile" useGeneratedKeys="true" keyProperty="id" parameterType="com.ljg.common.model.UFile" >

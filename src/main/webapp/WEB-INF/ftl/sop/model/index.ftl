@@ -107,7 +107,7 @@
 								<tr>
                                     <td><input value="${it.mid}" check='box' type="checkbox" /></td>
                                     <td>${it.mname?default('-')}</td>
-                                    <td>${it.gid?default('-')}</td>
+                                    <td>${it.gname?default('-')}</td>
                                     <td>
                                         <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.mid}]);">删除</a>
                                     </td>
@@ -143,7 +143,14 @@
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">部门名:</label>
-                            <input type="text" class="form-control" id="gid" name="gid"  placeholder="请输入部门名">
+                            <select name="gid" id="gid">
+                                <#if page?exists && page.list?size gt 0 >
+                                    <#list page.list as it>
+                                        <option value="${it.gid}">&nbsp;&nbsp;${it.gname}&nbsp;&nbsp;</option>
+                                    </#list>
+                                </#if>
+                            </select>
+                            <#--<input type="text" class="form-control" id="gid" name="gid"  placeholder="请输入部门名">-->
                         </div>
                     </form>
                 </div>
