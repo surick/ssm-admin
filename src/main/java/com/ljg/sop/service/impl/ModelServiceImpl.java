@@ -51,7 +51,7 @@ public class ModelServiceImpl extends BaseMybatisDao<UModelMapper> implements Mo
             for (String idx : idArray) {
                 Long mid = new Long(idx);
                 successCount += this.deleteModelByMid(mid);
-                errorCount =idArray.length-successCount;
+                errorCount = idArray.length-successCount;
                 //List<UModel> models= modelMapper.findModelByMid(mid);
                 //if(null != models && models.size() > 0){
                 //    errorCount += models.size();

@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>Model管理</title>
+    <title>Model管理-SOP管理</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
     <link   rel="shortcut icon" href="${basePath}/favicon.ico" />

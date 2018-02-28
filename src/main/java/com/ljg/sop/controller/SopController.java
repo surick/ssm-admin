@@ -95,6 +95,12 @@ public class SopController extends BaseController{
         return new ModelAndView("sop/file/index","page",file);
     }
 
+    @RequestMapping(value = "file/deleteFileByFid",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String,Object> deleteFileByFid(String fids){
+        return fileService.deleteFileById(fids);
+    }
+
     @RequestMapping(value = "file/showFile")
     public String showFile(@RequestParam(value = "fid",required = false) String fid){
         return "/sop/file/show";

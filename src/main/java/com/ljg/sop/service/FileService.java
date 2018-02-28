@@ -13,6 +13,8 @@ import java.util.Map;
  */
 public interface FileService {
     String addFile(UFile file);
+    int deleteFileByFid(Long fid);
+    Map<String,Object> deleteFileById(String fids);
     Pagination<UFile> findPage(Map<String,Object> resultMap,Integer pageNo,
                                Integer pageSize);
 }

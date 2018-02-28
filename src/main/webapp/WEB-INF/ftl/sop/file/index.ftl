@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title>文件管理</title>
+    <title>文件管理-SOP管理</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
     <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
@@ -48,17 +48,6 @@
                 layer.close(index);
             });
         }
-        <#--根据id查看文件-->
-     /*   function showById(fid) {
-            //window.location.href="../../../../js/common/pdfjs/viewer.html?file=show.jsp?"+fid;
-            $.ajax({
-                url: '${basePath}/sop/file/showFile.shtml',
-                data: {
-                    fid: fid,
-                },
-                type: 'GET',
-            }).done(alert("success!"));
-        }*/
         <#--根据id更新文件-->
         function updateById() {
 
