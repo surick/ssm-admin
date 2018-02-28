@@ -53,5 +53,16 @@
         delete from sop_file
         where fid = #{fid,jdbcType=BIGINT}
     </delete>
-
+    <update id="updateFile" parameterType="com.ljg.common.model.UFile">
+        update sop_file
+        set mid = #{mid,jdbcType=BIGINT},
+            fnum =  #{fnum,jdbcType=VARCHAR},
+            fname = #{fname,jdbcType=VARCHAR},
+            fver = #{fver,jdbcType=VARCHAR},
+            fuser = #{fuser,jdbcType=VARCHAR},
+            fpath = #{fpath,jdbcType=VARCHAR},
+            file = #{file,jdbcType=BLOB,typeHandler=org.apache.ibatis.type.BlobTypeHandler},
+            ftime = #{ftime,jdbcType=TIMESTAMP}
+        where fid = #{fid,jdbcType=BIGINT}
+    </update>
 </mapper>

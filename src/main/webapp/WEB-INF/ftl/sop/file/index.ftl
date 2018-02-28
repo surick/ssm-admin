@@ -49,8 +49,9 @@
             });
         }
         <#--根据id更新文件-->
-        function updateById() {
-
+        function updateById(fid) {
+            $('#updateFile').modal();
+            $('#fid1').val(fid);
         }
         <#--&lt;#&ndash;添加model&ndash;&gt;
         function addFile(){
@@ -157,7 +158,7 @@
                                     <td>${it.ftime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                     <td>
                                         <i class="glyphicon glyphicon-eye-open"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
-                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:updateById([${it.fid}]);">更新</a>
+                                        <i class="glyphicon glyphicon-edit"></i><a href="javascript:updateById(${it.fid});">更新</a>
                                         <i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
                                     </td>
                                 </tr>
@@ -210,6 +211,47 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <input type="submit" value="发布" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<#--/弹框-->
+<#--弹框-->
+    <div class="modal fade" id="updateFile" tabindex="-1" role="dialog" aria-labelledby="updateFileLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="updateFileLabel">更新文件</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="boxFileForm" action="/sop/file/updateFile.shtml" method="post" enctype="multipart/form-data">
+                        <input type="text" style="display: none" id="fid1" name="fid" />
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Model名称:</label>
+                            <input type="text" class="form-control" id="mid" name="mid" placeholder="请输入Model名称"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">NUM:</label>
+                            <input type="text" class="form-control" id="fnum" name="fnum"  placeholder="请输入NUM">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">文件名称:</label>
+                            <input type="text" class="form-control" id="fname" name="fname"  placeholder="请输入文件名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">版本:</label>
+                            <input type="text" class="form-control" id="fver" name="fver"  placeholder="请输入版本">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">上传文件:</label>
+                            <input type="file" id="sop" name="sop">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" value="更新" class="btn btn-primary">
                     </form>
                 </div>
             </div>

@@ -32,6 +32,12 @@ public class FileServiceImpl extends BaseMybatisDao<UFileMapper> implements File
     }
 
     @Override
+    public String updateFile(UFile uFile){
+        fileMapper.updateFile(uFile);
+        return "success";
+    }
+
+    @Override
     public int deleteFileByFid(Long fid){
         return fileMapper.deleteFileByFid(fid);
     }

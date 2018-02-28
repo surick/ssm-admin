@@ -10,5 +10,6 @@ import com.ljg.common.model.UFile;
  */
 public interface UFileMapper {
     int addFile(UFile file);
+    int updateFile(UFile file);
     int deleteFileByFid(Long fid);
 }

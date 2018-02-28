@@ -74,7 +74,8 @@ public class SopController extends BaseController{
 
     @RequestMapping(value = "file/addFile",method = RequestMethod.POST)
     @ResponseBody
-    public ModelAndView addFile(MultipartFile sop,UFile ufile,String findContent, ModelMap modelMap, Integer pageNo) throws Exception{
+    public ModelAndView addFile(MultipartFile sop,UFile ufile,String findContent, ModelMap modelMap, Integer pageNo)
+            throws Exception{
         resultMap.put("status",400);
         byte[] filebytes = sop.getBytes();
         ufile.setFile(filebytes);
@@ -104,6 +105,31 @@ public class SopController extends BaseController{
     @RequestMapping(value = "file/showFile")
     public String showFile(@RequestParam(value = "fid",required = false) String fid){
         return "/sop/file/show";
+    }
+
+    @RequestMapping(value = "file/updateFile",method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView updateFile(MultipartFile sop,UFile uFile,String findContent,ModelMap modelMap,Integer pageNo)
+        throws Exception{
+        resultMap.put("status",400);
+        if(sop.isEmpty()){
+            return new ModelAndView("sop/file/index");
+        }else {
+            byte[] filebytes = sop.getBytes();
+            uFile.setFile(filebytes);
+            String fpath = sop.getOriginalFilename();
+            uFile.setFpath(fpath);
+            String email = TokenManager.getToken().getEmail();
+            uFile.setFuser(email);
+            Timestamp ftime = new Timestamp(System.currentTimeMillis());
+            uFile.setFtime(ftime);
+            fileService.updateFile(uFile);
+            resultMap.put("message","更新文件成功");
+            resultMap.put("status",200);
+            modelMap.put("findContent",findContent);
+            Pagination<UFile> file = fileService.findPage(modelMap,pageNo,pageSize);
+            return new ModelAndView("sop/file/index","page",file);
+        }
     }
 
     @RequestMapping(value = "monitor/index")
