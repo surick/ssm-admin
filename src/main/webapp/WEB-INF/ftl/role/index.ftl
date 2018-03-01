@@ -87,7 +87,7 @@
 				<#--引入左侧菜单-->
 				<@_left.role 1/>
 				<div class="col-md-10">
-					<h2>角色列表</h2>
+					<h2><i class="fa fa-list"></i> 角色列表</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 						<div clss="well">
@@ -96,12 +96,12 @@
 					        			name="findContent" id="findContent" placeholder="输入角色类型 / 角色名称">
 					      </div>
 					     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary">查询</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 查询</button>
 				         	<@shiro.hasPermission name="/role/addRole.shtml">
-				         		<a class="btn btn-success" onclick="$('#addrole').modal();">增加角色</a>
+				         		<a class="btn btn-success" onclick="$('#addrole').modal();"><i class="fa fa-plus"></i> 增加角色</a>
 				         	</@shiro.hasPermission>
 				         	<@shiro.hasPermission name="/role/deleteRoleById.shtml">
-				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
+				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i> Delete</button>
 				         	</@shiro.hasPermission>
 				         </span>    
 				        </div>
@@ -109,9 +109,9 @@
 					<table class="table table-bordered">
 						<tr>
 							<th><input type="checkbox" id="checkAll"/></th>
-							<th>角色名称</th>
-							<th>角色类型</th>
-							<th>操作</th>
+							<th><i class="fa fa-user"></i> 角色名称</th>
+							<th><i class="fa fa-tag"></i> 角色类型</th>
+							<th><i class="fa fa-cog"></i> 操作</th>
 						</tr>
 						<#if page?exists && page.list?size gt 0 >
 							<#list page.list as it>
@@ -122,7 +122,7 @@
 									<td>
 										<#if it.type != '888888'>
 											<@shiro.hasPermission name="/role/deleteRoleById.shtml">
-												<i class="glyphicon glyphicon-remove"></i><a href="javascript:deleteById([${it.id}]);">删除</a>
+												<i class="fa fa-trash"></i><a href="javascript:deleteById([${it.id}]);">删除</a>
 								         	</@shiro.hasPermission>
 								         	<#else>
 								         	-

@@ -89,7 +89,7 @@
                                name="findContent" id="findContent" placeholder="输入部门/Model名称">
                     </div>
                     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary"><i class="fa fa-paw"></i>查询</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>查询</button>
 				         		<a class="btn btn-success" onclick="$('#addModel').modal();"><i class="fa fa-plus"></i>添加Model</a>
 				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i>Delete</button>
 				         </span>
@@ -98,9 +98,9 @@
                 <table class="table table-bordered">
                     <tr>
                         <th><input type="checkbox" id="checkAll"/></th>
-                        <th>Model名称</th>
-                        <th>部门</th>
-                        <th>操作</th>
+                        <th><i class="fa fa-tag"></i> Model名称</th>
+                        <th><i class="fa fa-tag"></i> 部门</th>
+                        <th><i class="fa fa-cog"></i> 操作</th>
                     </tr>
 						<#if page?exists && page.list?size gt 0 >
                             <#list page.list as it>

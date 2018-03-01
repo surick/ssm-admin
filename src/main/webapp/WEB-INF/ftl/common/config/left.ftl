@@ -12,7 +12,7 @@
 	  </li>
 	  <li class="${(index==2)?string('active',' ')} dropdown">
 	      <a href="${basePath}/role/mypermission.shtml">
-              <i class="fa fa-exclamation-circle"></i>&nbsp;我的权限
+              <i class="fa fa-exclamation-circle"></i>&nbsp;用户权限
 	      </a>
 	  </li>
 	</ul>
@@ -24,12 +24,12 @@
 			<ul data-spy="affix" class="nav nav-list nav-tabs nav-stacked bs-docs-sidenav dropdown affix" style="top: 100px; z-index: 100;">
 			  <li class="${(index==1)?string('active',' ')}">
 			      <a href="${basePath}/member/list.shtml">
-                      <i class="fa fa-list"></i>&nbsp;用户列表
+                      <i class="fa fa-list"></i>&nbsp;所有用户
 			      </a>
 			  </li>
 			  <li class="${(index==2)?string('active',' ')} dropdown">
 			      <a href="${basePath}/member/online.shtml">
-                      <i class="fa fa-laptop"></i>&nbsp;当前在线
+                      <i class="fa fa-laptop"></i>&nbsp;在线用户
 			      </a>
 			  </li>
 			</ul>

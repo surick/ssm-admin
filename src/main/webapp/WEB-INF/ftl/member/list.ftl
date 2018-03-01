@@ -2,10 +2,10 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8" />
-		<title>用户列表 —个人中心</title>
+		<title>所有用户—用户管理</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
+		<link rel="shortcut icon" href="${basePath}/favicon.ico" />
 		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
 		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
 		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
@@ -83,7 +83,7 @@
 			<div class="row">
 				<@_left.member 1/>
 				<div class="col-md-10">
-					<h2>用户列表</h2>
+					<h2><i class="fa fa-list"></i> 所有用户</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 						<div clss="well">
@@ -92,9 +92,9 @@
 					        			name="findContent" id="findContent" placeholder="输入昵称 / 帐号">
 					      </div>
 					     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary">查询</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 查询</button>
 				         	<@shiro.hasPermission name="/member/deleteUserById.shtml">
-				         		<button type="button" id="deleteAll" class="btn  btn-danger">Delete</button>
+				         		<button type="button" id="deleteAll" class="btn  btn-danger"><i class="fa fa-trash"></i> Delete</button>
 				         	</@shiro.hasPermission>
 				         </span>    
 				        </div>
@@ -102,12 +102,12 @@
 					<table class="table table-bordered">
 						<tr>
 							<th><input type="checkbox" id="checkAll"/></th>
-							<th>昵称</th>
-							<th>Email/帐号</th>
-							<th>登录状态</th>
-							<th>创建时间</th>
-							<th>最后登录时间</th>
-							<th>操作</th>
+							<th><i class="fa fa-qq"></i> 昵称</th>
+							<th><i class="fa fa-envelope"></i> Email/帐号</th>
+							<th><i class="fa fa-check-circle"></i> 登录状态</th>
+							<th><i class="fa fa-calendar"></i> 创建时间</th>
+							<th><i class="fa fa-paw"></i> 最后登录时间</th>
+							<th><i class="fa fa-cog"></i> 操作</th>
 						</tr>
 						<#if page?exists && page.list?size gt 0 >
 							<#list page.list as it>
@@ -120,13 +120,13 @@
 									<td>${it.lastLoginTime?string('yyyy-MM-dd HH:mm')}</td>
 									<td>
 										<@shiro.hasPermission name="/member/forbidUserById.shtml">
-										${(it.status==1)?string('<i class="glyphicon glyphicon-eye-close"></i>&nbsp;','<i class="glyphicon glyphicon-eye-open"></i>&nbsp;')}
+										${(it.status==1)?string('<i class="fa fa-lock"></i>&nbsp;','<i class="fa fa-lock-open"></i>&nbsp;')}
 										<a href="javascript:forbidUserById(${(it.status==1)?string(0,1)},${it.id})">
 											${(it.status==1)?string('禁止登录','激活登录')}
 										</a>
 										</@shiro.hasPermission>
 										<@shiro.hasPermission name="/member/deleteUserById.shtml">
-										<a href="javascript:_delete([${it.id}]);">删除</a>
+										<i class="fa fa-trash"></i> <a href="javascript:_delete([${it.id}]);">删除</a>
 										</@shiro.hasPermission>
 									</td>
 								</tr>

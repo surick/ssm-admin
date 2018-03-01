@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="utf-8" />
 		<%--不知道这里的basePath 设置没用 --%>
 		<base href="<%=basePath%>"/>
-		<title>用户角色分配 - 权限管理</title>
+		<title>角色分配 - 权限管理</title>
     	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<link   rel="shortcut icon" href="<%=basePath%>/favicon.ico" />
 		<link href="<%=basePath%>/js/common/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
@@ -159,7 +159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</shiro:hasAnyRoles>  
 				<div class="col-md-10">
-					<h2>用户角色分配（这是个JSP页面）</h2>
+					<h2>角色分配</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 						<div clss="well">

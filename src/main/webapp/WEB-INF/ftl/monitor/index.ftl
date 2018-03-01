@@ -25,7 +25,7 @@
     <#--<@_left.monitor 1/>-->
         <div id="top">
             <select>
-                <option value=SMT>SMT</option>
+                <option value=SMT>SMT产线</option>
             </select>
             <select id="time">
                 <option value="1">1mins</option>
@@ -34,7 +34,7 @@
             </select>
         </div>
         <div id="main" style="height: 880px;"></div>
-        <bgsound src="" loop="-1" id="bgsound" />
+        <audio id="alarm" src="" autoplay="autoplay"></audio>
     </div><#--/row-->
 </div>
 </body>

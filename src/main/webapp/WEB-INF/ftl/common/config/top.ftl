@@ -19,32 +19,32 @@
 	          <ul class="nav navbar-nav" id="topMenu">
 				<li class="dropdown ${(index==1)?string('active','')}">
 					<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/user/index.shtml">
-						<i class="fa fa-id-card"></i>&nbsp;个人中心<span class="caret"></span>
+						<i class="fa fa-id-card"></i>&nbsp;个人空间<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="${basePath}/user/index.shtml"><i class="fa fa-user-circle"></i>&nbsp;个人资料</a></li>
 						<li><a href="${basePath}/user/updateSelf.shtml"><i class="fa fa-edit"></i>&nbsp;资料修改</a></li>
 						<li><a href="${basePath}/user/updatePswd.shtml"><i class="fa fa-key"></i>&nbsp;密码修改</a></li>
-						<li><a href="${basePath}/role/mypermission.shtml"><i class="fa fa-exclamation-circle"></i>&nbsp;我的权限</a></li>
+						<li><a href="${basePath}/role/mypermission.shtml"><i class="fa fa-exclamation-circle"></i>&nbsp;用户权限</a></li>
 					</ul>
 				</li>	  
-				<#--拥有 角色888888（管理员） ||  100002（用户中心）-->
+				<#--拥有 角色888888（管理员） ||  100002（用户管理）-->
 				<@shiro.hasAnyRoles name='888888,100002'>          
 				<li class="dropdown ${(index==2)?string('active','')}">
 					<a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/member/list.shtml">
-						<i class="fa fa-users"></i>&nbsp;用户中心<span class="caret"></span>
+						<i class="fa fa-users"></i>&nbsp;用户管理<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<@shiro.hasPermission name="/member/list.shtml">
-							<li><a href="${basePath}/member/list.shtml"><i class="fa fa-list"></i>&nbsp;用户列表</a></li>
+							<li><a href="${basePath}/member/list.shtml"><i class="fa fa-list"></i>&nbsp;所有用户</a></li>
 						</@shiro.hasPermission>
 						<@shiro.hasPermission name="/member/online.shtml">
-							<li><a href="${basePath}/member/online.shtml"><i class="fa fa-laptop"></i>&nbsp;当前在线</a></li>
+							<li><a href="${basePath}/member/online.shtml"><i class="fa fa-laptop"></i>&nbsp;在线用户</a></li>
 						</@shiro.hasPermission>
 					</ul>
 				</li>	
 				</@shiro.hasAnyRoles>         
-				<#--拥有 角色888888（管理员） ||  100003（权限频道）-->
+				<#--拥有 角色888888（管理员） ||  100003（权限管理）-->
 				<@shiro.hasAnyRoles name='888888,100003'>
 					<li class="dropdown ${(index==3)?string('active','')}">
 						<a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/permission/index.shtml">
@@ -101,7 +101,7 @@
 							<i class="fa fa-user"></i>&nbsp;${token.nickname?default('def')}<span class="caret"></span></a>
 							<ul class="dropdown-menu" userid="${token.id}">
 								<li><a href="${basePath}/user/index.shtml"><i class="fa fa-user-circle"></i>&nbsp;个人资料</a></li>
-								<li><a href="${basePath}/role/mypermission.shtml"><i class="fa fa-exclamation-circle"></i>&nbsp;我的权限</a></li>
+								<li><a href="${basePath}/role/mypermission.shtml"><i class="fa fa-exclamation-circle"></i>&nbsp;用户权限</a></li>
 								<li><a href="javascript:void(0);" onclick="logout();"><i class="fa fa-power-off"></i>&nbsp;注销</a></li>
 							</ul>
 						</@shiro.user>  

@@ -119,7 +119,7 @@
 				<#--引入左侧菜单-->
 				<@_left.role 4/>
 				<div class="col-md-10">
-					<h2>权限分配</h2>
+					<h2><i class="fa fa-sitemap"></i> 权限分配</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 						<div clss="well">
@@ -128,7 +128,7 @@
 					        			name="findContent" id="findContent" placeholder="输入角色名称 / 角色类型">
 					      </div>
 					     <span class=""> <#--pull-right -->
-				         	<button type="submit" class="btn btn-primary">查询</button>
+				         	<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> 查询</button>
 				         	<@shiro.hasPermission name="/permission/clearPermissionByRoleIds.shtml">
 				         		<button type="button" id="deleteAll" class="btn  btn-danger">清空角色权限</button>
 				         	</@shiro.hasPermission>
@@ -139,10 +139,10 @@
 						<input type="hidden" id="selectRoleId">
 						<tr>
 							<th width="5%"><input type="checkbox" id="checkAll"/></th>
-							<th width="10%">角色名称</th>
-							<th width="10%">角色类型</th>
-							<th width="60%">拥有的权限</th>
-							<th width="15%">操作</th>
+							<th width="10%"><i class="fa fa-tag"></i> 角色名称</th>
+							<th width="10%"><i class="fa fa-tag"></i> 角色类型</th>
+							<th width="60%"><i class="fa fa-tag"></i> 拥有的权限</th>
+							<th width="15%"><i class="fa fa-cog"></i> 操作</th>
 						</tr>
 						<#if page?exists && page.list?size gt 0 >
 							<#list page.list as it>

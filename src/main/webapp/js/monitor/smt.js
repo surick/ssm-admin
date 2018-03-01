@@ -344,6 +344,10 @@ require(
 								  // console.info(JSON.stringify(obj4));
 							  }
 
+							  if (obj3.length > 0){
+							  	   $('#alarm').attr("src","../../images/monitor/sound/alarm.WAV");
+							  }
+
 							  // 根据重组的json加载markpoint,刷新状态
 							  var idle = {
 								  // symbol: 'image://./img/1.png',

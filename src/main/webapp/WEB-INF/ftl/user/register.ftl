@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
     <head>
-
         <meta charset="utf-8">
         <title>ssm-admin | 注册</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-
         <!-- CSS -->
         <#--link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'-->
+        <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="${basePath}/css/login/reset.css"/>
         <link rel="stylesheet" href="${basePath}/css/login/supersized.css"/>
         <link rel="stylesheet" href="${basePath}/css/login/style.css"/>
@@ -25,7 +23,7 @@
 
     <body id="body">
         <div class="page-container" style="margin: 100px auto 0px;">
-            <h1>注册</h1>
+            <h1><i class="fa fa-registered"></i>注册</h1>
             <form id="_form" action="" method="post">
                 <input type="text" name="nickname" id="nickname" class="username" placeholder="请输入昵称">
                 <input type="text" name="email"  id="email" placeholder="请输入邮箱/账号，作为您以后登录使用">
@@ -35,15 +33,19 @@
 	                <input type="text" name="vcode"   placeholder="验证码" style="width: 110px; margin-left: -8px; margin-right: 8px;">
                 	<img src="${basePath}/open/getGifCode.shtml" />
                 </div>
-                <button type="button" class="register">注册</button>
-                <button type="button" id="login" >登录</button>
+                <button type="button" class="register"><i class="fa fa-registered"></i> 注册</button>
+                <button type="button" id="login" ><i class="fa fa-sign-in"></i> 登录</button>
                 <div class="error"><span>+</span></div>
                 <footer class="home-footer">
                     <div>
                         <div>
-            <span class="copy">©<span>Jin(yzzxy.top) |  <a href="https://surick.github.io/ssm-admin" class="btn-link">项目介绍</a> | <a href="tencent://message/?Menu=yes&uin=793792709" class="btn-link">QQ</a> | <a href="https://weibo.com/u/2774951333" class="btn-link">微博</a> | <a href="mailto:jk103@qq.com" class="btn-link">邮箱</a>
-				| <a href="https://github.com/surick/ssm-admin" class="btn-link" target="_blank">GitHub</a> | <a href="https://gitee.com/surick/ssm-admin" class="btn-link" target="_blank">码云</a>
-        	</span></span></div>
+                            <i class="fa fa-copyright"></i>Jin(yzzxy.top) |  <a href="https://surick.github.io/ssm-admin" class="btn-link"><i class="fa fa-github-alt"></i> 项目介绍</a>
+                            | <a href="tencent://message/?Menu=yes&uin=793792709" class="btn-link"><i class="fa fa-qq"></i> QQ</a>
+                            | <a href="https://weibo.com/u/2774951333" class="btn-link"><i class="fa fa-weibo"></i> 微博</a>
+                            | <a href="mailto:jk103@qq.com" class="btn-link"><i class="fa fa-envelope"></i> 邮箱</a>
+                            | <a href="https://github.com/surick/ssm-admin" class="btn-link" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+                            | <a href="https://gitee.com/surick/ssm-admin" class="btn-link" target="_blank"><i class="fa fa-git"></i> 码云</a>
+                            </span></span></div>
                     </div>
                 </footer>
             </form>

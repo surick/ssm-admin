@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8" />
-		<title>当前在线Session</title>
+		<title>在线用户-用户管理</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
 		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
@@ -52,7 +52,7 @@
 			<div class="row">
 				<@_left.member 2/>
 				<div class="col-md-10">
-					<h2>当前在线用户</h2>
+					<h2>在线用户</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 					<#--	<div clss="well">
@@ -62,13 +62,13 @@
 					<hr>-->
 					<table class="table table-bordered">
 						<tr>
-							<th>SessionID</th>
-							<th>昵称</th>
-							<th>Email/帐号</th>
-							<th>创建回话</th>
-							<th>回话最后活动</th>
-							<th>状态</th>
-							<th>操作</th>
+							<th><i class="fa fa-info"></i> SessionID</th>
+							<th><i class="fa fa-qq"></i> 昵称</th>
+							<th><i class="fa fa-envelope"></i> Email/帐号</th>
+							<th><i class="fa fa-calendar"></i> 创建回话</th>
+							<th><i class="fa fa-calendar"></i> 回话最后活动</th>
+							<th><i class="fa fa-check-circle"></i> 状态</th>
+							<th><i class="fa fa-cog"></i> 操作</th>
 						</tr>
 						<#if list?exists && list?size gt 0 >
 							<#list list as it>
@@ -80,9 +80,9 @@
 									<td>${it.lastAccess?string('HH:mm:ss yy-MM-dd')}</td>
 									<td>${(it.sessionStatus)?string('有效','已踢出')}</td>
 									<td>
-										<a href="${basePath}/member/onlineDetails/${it.sessionId}.shtml">详情</a>
+                                        <i class="fa fa-info-circle"></i><a href="${basePath}/member/onlineDetails/${it.sessionId}.shtml"> 详情</a>
 										<@shiro.hasPermission name="/member/changeSessionStatus.shtml">
-											<a v="onlineDetails"href="javascript:void(0);" sessionId="${it.sessionId}" status="${(it.sessionStatus)?string(1,0)}">${(it.sessionStatus)?string('踢出','激活')}</a>
+											<i class="fa fa-sign-out"></i> <a v="onlineDetails"href="javascript:void(0);" sessionId="${it.sessionId}" status="${(it.sessionStatus)?string(1,0)}">${(it.sessionStatus)?string('踢出','激活')}</a>
 										</@shiro.hasPermission>
 									</td>
 								</tr>

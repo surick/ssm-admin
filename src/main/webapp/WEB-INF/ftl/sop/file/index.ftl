@@ -136,14 +136,14 @@
                 <table class="table table-bordered">
                     <tr>
                         <th><input type="checkbox" id="checkAll"/></th>
-                        <th>NUM</th>
-                        <th>Model名称</th>
-                        <th>文件名</th>
-                        <th>档案名</th>
-                        <th>文件版本</th>
-                        <th>上传人</th>
-                        <th>更新时间</th>
-                        <th>操作</th>
+                        <th><i class="fa fa-tag"></i> NUM</th>
+                        <th><i class="fa fa-tag"></i> Model名称</th>
+                        <th><i class="fa fa-tag"></i> 文件名</th>
+                        <th><i class="fa fa-file"></i> 档案名</th>
+                        <th><i class="fa fa-tag"></i> 文件版本</th>
+                        <th><i class="fa fa-user-circle"></i> 上传人</th>
+                        <th><i class="fa fa-calendar"></i> 更新时间</th>
+                        <th><i class="fa fa-cog"></i> 操作</th>
                     </tr>
 						<#if page?exists && page.list?size gt 0 >
                             <#list page.list as it>
@@ -157,7 +157,7 @@
                                     <td>${it.fuser?default('-')}</td>
                                     <td>${it.ftime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                     <td>
-                                        <i class="fa fa-eye"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
+                                        <i class="fa fa-download"></i><a href="/sop/file/showFile.shtml?fid=${it.fid}">查看</a>
                                         <i class="fa fa-edit"></i></i><a href="javascript:updateById(${it.fid});">更新</a>
                                         <i class="fa fa-trash"></i><a href="javascript:deleteById([${it.fid}]);">删除</a>
                                     </td>
