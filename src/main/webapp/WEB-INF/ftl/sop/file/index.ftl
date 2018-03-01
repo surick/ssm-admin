@@ -118,7 +118,7 @@
     <#--引入左侧菜单-->
         <@_left.sop 2/>
         <div class="col-md-10">
-            <h2>文件管理</h2>
+            <h2><i class="fa fa-folder-open"></i>文件管理</h2>
             <hr>
             <form method="post" action="" id="formId" class="form-inline">
                 <div clss="well">

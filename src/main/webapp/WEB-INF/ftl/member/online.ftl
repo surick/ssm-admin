@@ -52,7 +52,7 @@
 			<div class="row">
 				<@_left.member 2/>
 				<div class="col-md-10">
-					<h2>在线用户</h2>
+					<h2><i class="fa fa-desktop"></i> 在线用户</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 					<#--	<div clss="well">

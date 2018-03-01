@@ -346,6 +346,19 @@
 		</dependency>
 		<!-- /Spring 升级4+ 依赖的JSON包 -->
 
+		<!--activiti依赖-->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+			<version>5.15.1</version>
+		</dependency>
+		<!--activiti与spring集成-->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+			<version>5.15.1</version>
+		</dependency>
+
 
 	</dependencies>
 </project>

@@ -2,4 +2,5 @@
 这只是一个欺骗Tomcat的文件。
 web.xml配置动态地址：
 tomcat判断存在静态文件时才会被springmvc servlet拦截，转向动态请求。
+http://blog.csdn.net/u012225679/article/details/72725932
  -->
