@@ -22,7 +22,7 @@
 <div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
     <div class="row">
     <#--引入左侧菜单-->
-    <#--<@_left.monitor 1/>-->
+   <@_left.monitor 1/>
         <div id="top">
             <select>
                 <option value=SMT>SMT产线</option>

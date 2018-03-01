@@ -120,7 +120,7 @@
 									<td>${it.lastLoginTime?string('yyyy-MM-dd HH:mm')}</td>
 									<td>
 										<@shiro.hasPermission name="/member/forbidUserById.shtml">
-										${(it.status==1)?string('<i class="fa fa-lock"></i>&nbsp;','<i class="fa fa-lock-open"></i>&nbsp;')}
+										${(it.status==1)?string('<i class="fa fa-lock"></i>&nbsp;','<i class="fa fa-unlock"></i>&nbsp;')}
 										<a href="javascript:forbidUserById(${(it.status==1)?string(0,1)},${it.id})">
 											${(it.status==1)?string('禁止登录','激活登录')}
 										</a>

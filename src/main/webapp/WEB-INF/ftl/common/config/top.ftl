@@ -19,12 +19,12 @@
 	          <ul class="nav navbar-nav" id="topMenu">
 				<li class="dropdown ${(index==1)?string('active','')}">
 					<a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/user/index.shtml">
-						<i class="fa fa-id-card"></i>&nbsp;个人空间<span class="caret"></span>
+						<i class="fa fa-id-card"></i>&nbsp;个人管理<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="${basePath}/user/index.shtml"><i class="fa fa-user-circle"></i>&nbsp;个人资料</a></li>
-						<li><a href="${basePath}/user/updateSelf.shtml"><i class="fa fa-edit"></i>&nbsp;资料修改</a></li>
-						<li><a href="${basePath}/user/updatePswd.shtml"><i class="fa fa-key"></i>&nbsp;密码修改</a></li>
+                        <li><a href="${basePath}/user/updateSelf.shtml"><i class="fa fa-edit"></i>&nbsp;资料管理</a></li>
+                        <li><a href="${basePath}/user/updatePswd.shtml"><i class="fa fa-key"></i>&nbsp;密码管理</a></li>
 						<li><a href="${basePath}/role/mypermission.shtml"><i class="fa fa-exclamation-circle"></i>&nbsp;用户权限</a></li>
 					</ul>
 				</li>	  
@@ -79,16 +79,30 @@
                       </ul>
                   	</li>
 				  </@shiro.hasAnyRoles>
-			  	<#--拥有 角色777777(设备监控）-->
+			    <#--拥有 角色777777(设备监控）-->
 				  <@shiro.hasAnyRoles name='888888,777777'>
 				  	<li class="dropdown ${(index==5)?string('active','')}">
-                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/monitor/index.shtml">
-                            <i class="fa fa-eye"></i>&nbsp;设备监控<span class="caret"></span>
+                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/sop/monitor/index.shtml">
+                            <i class="fa fa-eye"></i>&nbsp;设备管理<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="${basePath}/sop/monitor/index.shtml"><i class="fa fa-eye"></i>&nbsp;设备监控</a></li>
                             <li><a href="${basePath}/sop/monitor/index.shtml"><i class="fa fa-server "></i>&nbsp;接口状态</a></li>
-                            <li><a href="${basePath}/sop/monitor/index.shtml"><i class="fa fa-plug"></i>&nbsp;待定</a></li>
+                            <li><a href="${basePath}/sop/monitor/index.shtml"><i class="fa fa-plus"></i>&nbsp;&nbsp;待定</a></li>
+                        </ul>
+                    </li>
+				  </@shiro.hasAnyRoles>
+			  <#--拥有 角色123456(财务管理）-->
+				  <@shiro.hasAnyRoles name='888888,123456'>
+				  	<li class="dropdown ${(index==6)?string('active','')}">
+                        <a aria-expanded="false" aria-haspopup="true"  role="button" data-toggle="dropdown" class="dropdown-toggle" href="${basePath}/workflow/index.shtml">
+                            <i class="fa fa-dollar"></i>&nbsp;财务管理<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${basePath}/workflow/index.shtml"><i class="fa fa-suitcase"></i>&nbsp;&nbsp;工作流程</a></li>
+                            <li><a href="${basePath}/workflow/management.shtml"><i class="fa fa-tasks"></i>&nbsp;&nbsp;流程管理</a></li>
+                            <li><a href="${basePath}/workflow/pay.shtml"><i class="fa fa-cc-visa"></i>&nbsp;支付管理</a></li>
+                            <li><a href="${basePath}/workflow/question.shtml"><i class="fa fa-question"></i>&nbsp;&nbsp;&nbsp;在线咨询</a></li>
                         </ul>
                     </li>
 				  </@shiro.hasAnyRoles>
