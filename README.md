@@ -6,12 +6,9 @@
 ## 前言
 基于ssm-admin权限后台整合零散项目，主要目的为学习研究。
 ## 项目介绍
-
-Privilege Management System Based on SSM + Redis + Freemarker + Shiro.
-
+基于SSM + Redis + Freemarker + Shiro的权限后台脚手架，并实现基本管理功能，集成Echart实现设备监控...
 ### 技术选型
 列表为目前使用的技术以及后续会使用的技术。
-
 #### 后端技术:
 技术 | 名称 | 官网
 ----|------|----
@@ -62,7 +59,6 @@ React | 界面构建框架  | [https://github.com/facebook/react](https://github
 Editor.md | Markdown编辑器  | [https://github.com/pandao/editor.md](https://github.com/pandao/editor.md)
 ## 环境搭建
 推荐使用IDEA开发工具clone项目到本地，无法正常启动请检查redis和数据库是否正确安装以及配置是否正确。
-
 #### 开发工具:
 - MySql: 数据库
 - Tomcat: 应用服务器
