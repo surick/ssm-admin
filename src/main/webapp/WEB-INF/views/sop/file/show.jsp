@@ -16,13 +16,16 @@
     Connection conn = null;
     Statement st = null;
     ResultSet rs = null;
-    String url = "jdbc:mysql://192.168.126.242:3306/sop";
-    String user = "iot";
-    String pass = "Iot85228800#1";
+    //String url = "jdbc:mysql://192.168.126.242:3306/sop";
+    //String user = "iot";
+    //String pass = "Iot85228800#1";
     String sql = "select file from sop_file where fid=" + fid + "";
     //String url = "jdbc:mysql://:3306/ssm-admin?useUnicode=true&characterEncoding=utf-8";
     //String user = "root";
-    //String pass = "Ljgzmy==961030";
+    //String pass = "root";
+    String url = "jdbc:mysql://:3306/ssm-admin?useUnicode=true&characterEncoding=utf-8";
+    String user = "root";
+    String pass = "Ljgzmy@3154";
     try {
         Class.forName("com.mysql.jdbc.Driver");
         //数据库的地址，密码，用户名
