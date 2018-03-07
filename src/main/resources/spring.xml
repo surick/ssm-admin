@@ -25,12 +25,9 @@
 			</list>
 		</property>
 	</bean>
-	
-	
+
 	<import resource="spring-mybatis.xml"/>
 	<import resource="spring-cache.xml"/>
 	<import resource="spring-shiro.xml"/>
-	<!-- 定时任务恢复数据，仅为测试使用
 	<import resource="spring-timer.xml"/>
-	 -->
 </beans>

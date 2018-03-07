@@ -29,22 +29,9 @@
   
   <!-- ====================================		初始化数据（调用存储过程）	========================================= -->
 	<insert id="initData">
-		{call init_shiro_demo()}
+		{call init_ssm_demo()}
 	</insert>
-  
-  <!-- ====================================		初始化数据（调用存储过程）	========================================= -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   <select id="findRoleByUserId" resultType="java.lang.String">
   		select r.type from u_role r,u_user_role ur where ur.rid = r.id and ur.uid = #{id,jdbcType=BIGINT}
   </select>

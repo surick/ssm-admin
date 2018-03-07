@@ -29,7 +29,6 @@
 	<context:component-scan base-package="com.ljg.*.*.tag;com.ljg.*.tag" />
 	<bean name="api" class="com.ljg.core.tags.APITemplateModel"></bean>
 	<bean name="springContextUtil" class="com.ljg.common.utils.SpringContextUtil" scope="singleton"></bean>
-	
 	<!-- 这个一定得有，注意了，如果其他配置也有需要这个，已经配置了，那不必了 -->
 	<mvc:annotation-driven  />
 	
@@ -67,16 +66,13 @@
 			    </bean>  
 			  </list>  
 		</property>  
-	</bean>   
-	
-	
-
-	<!--===============通用视图解析器 begin===============-->
+	</bean>
+	<!--通用视图解析器-->
 	<bean id="viewResolverCommon"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
-<!--			可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑-->
+		<!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑-->
 		<property name="viewClass">
 			<value>org.springframework.web.servlet.view.InternalResourceView
 			</value>
@@ -85,16 +81,16 @@
 	</bean>
 
 	<!-- 视图解析器 -->
-	<!-- 配置freeMarker视图解析器 -->
+	<!-- freeMarker视图解析器 -->
 	<bean id="viewResolverFtl"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 		<property name="viewClass" value="com.ljg.core.freemarker.extend.FreeMarkerViewExtend" />
-		<!-- 把Freemarker 扩展一下，把相关属性加入进去。。。 -->
 		<property name="contentType" value="text/html; charset=utf-8" />
 		<property name="cache" value="true" />
 		<property name="suffix" value=".ftl" />
 		<property name="order" value="0" />
 	</bean>
+	<!--jsp-->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="order" value="2"></property>
@@ -103,10 +99,7 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-
-
-
-	<!-- 配置freeMarker 拓展-->
+	<!-- 配置freeMarker拓展-->
 	<bean id="freemarkerConfig"
 		class="com.ljg.core.freemarker.extend.FreeMarkerConfigExtend">
 		<property name="templateLoaderPath">
@@ -122,7 +115,7 @@
 			<value>utf-8</value>
 		</property>
 		<property name="freemarkerSettings">
-			<props><!-- 315360000 -->
+			<props>
 					<prop key="template_update_delay">0</prop>
 					<prop key="defaultEncoding">UTF-8</prop>
 					<prop key="url_escaping_charset">UTF-8</prop>
@@ -131,10 +124,10 @@
 					<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
 					<prop key="date_format">yyyy-MM-dd</prop>
 					<prop key="time_format">HH:mm:ss</prop>
-	<!--			<prop key="number_format">0.######</prop>-->
-				<prop key="number_format">#</prop>
-				<prop key="whitespace_stripping">true</prop>
-				<prop key="auto_import">
+					<!--<prop key="number_format">0.######</prop>-->
+					<prop key="number_format">#</prop>
+					<prop key="whitespace_stripping">true</prop>
+					<prop key="auto_import">
 					<!-- 自动装载，引入Freemarker，用于Freemarker Macro引入 -->
 					/common/config/top.ftl as _top,
 					/common/config/left.ftl as _left
@@ -143,10 +136,8 @@
 		</property>
 	</bean>
 	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
-	<!--===============通用视图解析器 end===============-->
-	
-	
-	<!--  上传文件定义大小 -->
+
+	<!--  上传文件设置 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		p:defaultEncoding="utf-8">

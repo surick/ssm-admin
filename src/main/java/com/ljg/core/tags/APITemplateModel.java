@@ -12,11 +12,7 @@ import java.util.Map;
 import static freemarker.template.ObjectWrapper.DEFAULT_WRAPPER;
 
 /**
- *
- * 
  * Freemarker 自定义标签 API公共入口
- *
- * 
  */
 
 public class APITemplateModel extends WYFTemplateModel {

@@ -175,7 +175,7 @@ public class CommonController extends BaseController {
 	 */
 	@RequestMapping(value="kickedOut",method=RequestMethod.GET)
 	public ModelAndView kickedOut(HttpServletRequest request,UrlPathHelper pp){
-		//如果是踢出后，来源地址是：http://shiro.itboy.net/u/login.shtml;JSESSIONID=4f1538d9-df19-48c8-b4b1-aadacadde23a
+		//如果是踢出后，来源地址是：http://localhost/u/login.shtml;JSESSIONID=4f1538d9-df19-48c8-b4b1-aadacadde23a
 		//如果来源是null，那么就重定向到首页。这个时候，如果首页是要登录，那就会跳转到登录页
 		if(StringUtils.isBlank(request.getHeader("Referer"))){
 			return redirect("/");

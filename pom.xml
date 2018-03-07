@@ -1,30 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>com.ljg</groupId>
 	<artifactId>ssm-admin</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<name>ssm-admin</name>
-	<url>http://maven.apache.org</url>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<!-- 设定主仓库，按设定顺序进行查找。 -->
+	<!-- 设定阿里云主仓库-->
 	<repositories>
-
 		<repository>
 			<id>ssm-admin-repos</id>
 			<name>ssm-admin Repository</name>
 			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
 		</repository>
-
 	</repositories>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -57,6 +49,7 @@
 			</resource>
 		</resources>
 	</build>
+	<!--J2EE基础-->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -108,20 +101,17 @@
 			<version>1.2_04</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- SSM  -->
+		<!--ssm框架-->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-		<!-- Spring 在 3.2.13版本后，要单独引用 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.2.5.RELEASE</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -132,7 +122,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.2.5.RELEASE</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
@@ -153,6 +142,7 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<!--Mysql-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -163,11 +153,13 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.18</version>
 		</dependency>
+		<!--切面-->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.1</version>
 		</dependency>
+		<!--工具-->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -193,10 +185,7 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.1.26</version>
 		</dependency>
-
-
-		<!-- 其他常用包 begin -->
-
+		<!--其他-->
 		<dependency>
 			<groupId>commons-attributes</groupId>
 			<artifactId>commons-attributes-api</artifactId>
@@ -212,7 +201,6 @@
 			<artifactId>ant</artifactId>
 			<version>1.6.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils-core</artifactId>
@@ -269,27 +257,25 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
-		<!-- 其他常用包 end'-->
-
-		<!-- freemarker begin -->
+		<!-- freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.20</version>
 		</dependency>
-		<!-- freemarker begin -->
-		<!-- freemarker + shiro（标签） begin -->
+		<!-- freemarker + shiro(标签)-->
 		<dependency>
 			<groupId>net.mingsoft</groupId>
 			<artifactId>shiro-freemarker-tags</artifactId>
 			<version>0.1</version>
 		</dependency>
-		<!-- freemarker + shiro（标签） begin -->
+		<!--quartz-->
 		<dependency>
 			<artifactId>quartz</artifactId>
 			<groupId>org.opensymphony.quartz</groupId>
 			<version>1.6.1</version>
 		</dependency>
+		<!--shiro-->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-all</artifactId>
@@ -300,7 +286,6 @@
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-web</artifactId>
@@ -316,10 +301,6 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
-
-		<!-- shiro begin -->
-
 		<!--
 			shiro + ehcache jar <dependency>
 			<artifactId>ehcache-core</artifactId>
@@ -328,17 +309,12 @@
 			<artifactId>shiro-ehcache</artifactId> <version>1.2.2</version>
 			</dependency>
 		-->
-		<!-- shiro end -->
-
-
-		<!-- redis begin -->
+		<!-- redis-->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>2.8.0</version>
 		</dependency>
-		<!-- redis end -->
-
 		<!-- Spring 升级4+ 依赖的JSON包 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -355,15 +331,12 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.7.4</version>
 		</dependency>
-		<!-- /Spring 升级4+ 依赖的JSON包 -->
-
 		<!--activiti依赖-->
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-engine</artifactId>
 			<version>5.21.0</version>
 		</dependency>
-		<!--activiti与spring集成-->
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring</artifactId>
@@ -388,13 +361,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- 支持activiti缓存 -->
 		<dependency>
 			<groupId>org.infinispan</groupId>
 			<artifactId>infinispan-core</artifactId>
 			<version>5.1.7.Final</version>
 		</dependency>
-		<!--模型相关操作-->
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-modeler</artifactId>
@@ -405,9 +376,5 @@
 			<artifactId>activiti-diagram-rest</artifactId>
 			<version>5.21.0</version>
 		</dependency>
-
-
-
-
 	</dependencies>
 </project>
