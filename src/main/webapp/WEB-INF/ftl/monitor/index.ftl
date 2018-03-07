@@ -14,7 +14,7 @@
     <!-- 使用CDN加速 -->
     <!--  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/efe/esl/2-1-6/esl.js"></script> -->
-    <script src="${basePath}/js/monitor/smt.js"></script>
+    <script src="${basePath}/js/monitor/smt_bug.js"></script>
 </head>
 <body data-target="#one" data-spy="scroll" style="padding:0px;margin:0px;background:#ffffff">
 <#--引入头部-->

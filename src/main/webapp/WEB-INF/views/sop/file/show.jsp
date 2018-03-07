@@ -19,7 +19,7 @@
     String url = "jdbc:mysql://192.168.126.242:3306/sop";
     String user = "iot";
     String pass = "Iot85228800#1";
-    String sql = "select file from sop_file where fid=" + fid + "";
+    //String sql = "select file from sop_file where fid=" + fid + "";
     //String url = "jdbc:mysql://:3306/ssm-admin?useUnicode=true&characterEncoding=utf-8";
     //String user = "root";
     //String pass = "root";

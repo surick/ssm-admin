@@ -16,7 +16,7 @@ public class ToTimer{
 	
 	@Resource
 	RoleService roleService;
-	@Scheduled(cron = "0/20 * * * * ? ")
+	@Scheduled(cron = "0 0 0/2 * * ? ")
 	public void run() {
 		/**
 		 * 调用存储过程，重新创建表，插入初始化数据。
