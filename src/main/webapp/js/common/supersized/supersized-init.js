@@ -20,15 +20,13 @@ jQuery(function($){
         // Components
         slide_links        : 'blank',    // Individual links for each slide (Options: false, 'num', 'name', 'blank')
         slides             : [    // Slideshow Images
-                                 /*{image : '/images/login/login_1.jpg'},
-                                 {image : '/images/login/login_2.jpg'},
-                                 {image : '/images/login/login_3.jpg'}*/
-                                 /*{image:'https://s1.ax1x.com/2018/03/07/9gg29I.jpg'},
-                                 {image:'https://s1.ax1x.com/2018/03/07/9ggH4s.jpg'},*/
-                                 /*{image:'https://s1.ax1x.com/2018/03/07/9ggxDU.jpg'}*/
-                                 /*{image:'https://s1.ax1x.com/2018/03/07/9g2yrT.jpg'}*/
-                                 {image:'/images/login/small.jpg'},
-                                 {image:'/images/login/small2.jpg'}
+                               //*{image : '/images/login/login_1.jpg'},
+                                {image : '/images/login/login_2.jpg'},
+                                {image : '/images/login/login_3.jpg'}*/
+                                /*{image:'https://s1.ax1x.com/2018/03/07/9gg29I.jpg'},
+                                {image:'https://s1.ax1x.com/2018/03/07/9ggH4s.jpg'},*/
+                                /*{image:'https://s1.ax1x.com/2018/03/07/9ggxDU.jpg'}*/
+                                {image:'https://dev-1253372767.file.myqcloud.com/small.jpg'}
                              ]
 
     });
