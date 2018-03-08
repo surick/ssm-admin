@@ -4,16 +4,20 @@
         <meta charset="utf-8">
         <title>ssm-admin | 登录</title>
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-        <link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
-        <!-- CSS -->
+        <link rel="icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" />
         <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="${basePath}/css/login/reset.css">
+        <#--<link rel="stylesheet" href="${basePath}/css/login/reset.css">
         <link rel="stylesheet" href="${basePath}/css/login/supersized.css">
-        <link rel="stylesheet" href="${basePath}/css/login/style.css">
+        <link rel="stylesheet" href="${basePath}/css/login/style.css">-->
+        <!--cdn-->
+        <link rel="stylesheet" href="https://dev-1253372767.file.myqcloud.com/login/reset.css">
+        <link rel="stylesheet" href="https://dev-1253372767.file.myqcloud.com/login/supersized.css">
+        <link rel="stylesheet" href="https://dev-1253372767.file.myqcloud.com/login/style.css">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-            <script src="${basePath}/js/common/html5shiv.js"></script>
+            <!--<script src="${basePath}/js/common/html5shiv.js"></script>-->
+			<script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
         <![endif]-->
 		<style>
 			canvas{position: fixed; top: 0px; left: 0px; }
@@ -57,12 +61,18 @@
             </footer>
         </div>
         <!-- Javascript -->
-        <script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
+        <#--<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
         <script  src="${basePath}/js/common/MD5.js"></script>
         <script  src="${basePath}/js/common/supersized/supersized.3.2.7.min.js"></script>
         <script  src="${basePath}/js/common/supersized/supersized-init.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-        <script >
+		<script  src="${basePath}/js/common/layer/layer.js"></script>-->
+
+        <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="https://dev-1253372767.file.myqcloud.com/MD5.js"></script>
+        <script src="https://dev-1253372767.file.myqcloud.com/supersized.3.2.7.min.js"></script>
+        <script src="https://dev-1253372767.file.myqcloud.com/supersized-init.js"></script>
+        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+        <script>
 			jQuery(document).ready(function() {
 				try{
 					var _href = window.location.href+"";
