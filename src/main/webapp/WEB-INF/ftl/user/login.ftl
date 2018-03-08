@@ -67,7 +67,7 @@
         <script  src="${basePath}/js/common/supersized/supersized-init.js"></script>
 		<script  src="${basePath}/js/common/layer/layer.js"></script>-->
 
-        <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://dev-1253372767.file.myqcloud.com/MD5.js"></script>
         <script src="https://dev-1253372767.file.myqcloud.com/supersized.3.2.7.min.js"></script>
         <script src="https://dev-1253372767.file.myqcloud.com/supersized-init.js"></script>

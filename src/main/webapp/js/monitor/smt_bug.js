@@ -29,7 +29,7 @@ require(
 			require('echarts/util/mapData/params').params.demo1 = {
 				getGeoJson : function(callback) {
 					$.ajax({
-						url : "https://dev-1253372767.file.myqcloud.com/smt.svg",
+						url : "../../images/monitor/smt.svg",
 						dataType : 'xml',
 						success : function(xml) {
 							callback(xml)
