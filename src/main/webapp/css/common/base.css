@@ -31,7 +31,7 @@ div.navbar-inverse{background:#2f87c1 none repeat scroll 0 0;border:1px solid #5
 .navbar-inverse .navbar-nav > .open > a,.navbar-inverse .navbar-nav > .open > a:focus,.navbar-inverse .navbar-nav > .open > a:hover{background-color:#55a7e3;color:#fff}
 .nav > li > a{display:block;padding:10px;position:relative}
 @media screen and (max-width:1201px){.mallMain,.rightMenu,#goold,#gonew,#teixiao,#floatbottom{display:none}
-}.active .icon-chevron-right{background-image:url("/images/ssm-logo.png");opacity:1}
+}.active .icon-chevron-right{background-image:url("https://dev-1253372767.file.myqcloud.com/ssm-logo.png");opacity:1}
 @media screen and (max-width:1501px){#_logo{display:block}
     @media screen and (max-width:750px){a#_logo{display:block}#search_row{display:none}
     }}@media screen and (max-width:501px){.footer-top > .col-lg-offset-1,.footer-bottom,#_ad{display:none}
@@ -56,7 +56,7 @@ div.navbar-inverse{background:#2f87c1 none repeat scroll 0 0;border:1px solid #5
 .linedwrap .codelines .lineno{color:rgb(170,170,170);padding-right:0.5em;padding-top:0;text-align:right;white-space:nowrap}
 .linedtextarea textarea,.linedwrap .codelines .lineno{font-family:monospace;font-size:14px;line-height:20px !important}
 .json_input{background-color:rgb(238,238,238);border:1px solid rgb(238,238,238);height:300px;margin:0;padding:0 !important;width:100%}
-.show_logo{background-image:url("/images/ssm-logo.png");background-position:right bottom;background-repeat:no-repeat}
+.show_logo{background-image:url("https://dev-1253372767.file.myqcloud.com/ssm-logo.png");background-position:right bottom;background-repeat:no-repeat}
 textarea{resize:both}
 .clear:after,.container:after{clear:both;content:".";display:block;height:0;visibility:hidden}
 .clear{display:block}
@@ -152,7 +152,7 @@ ul.cloud a:hover{border-radius:0;text-shadow:1px 1px 1px #000}
 .search-write-wrap .search-write-cont,.search-write-wrap .SMSearTxt{color:#56688a}
 .search-write-cont{background:rgba(0,0,0,0) none repeat scroll 0 0;border:0 none;float:left;font-family:"Microsoft YaHei";height:25px;line-height:25px;margin:6px 0 0 10px;outline:0 none;padding:0}
 .w464{width:464px}
-.quickdelete{background:#fff url("/images/quickdelete.png") no-repeat scroll 7px 12px;display:none;height:32px;position:absolute;right:0;top:0;width:32px}
+.quickdelete{background:#fff url("https://dev-1253372767.file.myqcloud.com/quickdelete.png") no-repeat scroll 7px 12px;display:none;height:32px;position:absolute;right:0;top:0;width:32px}
 .search-hint,.search-hint02{color:#c0c1c4;font-family:"Microsoft YaHei";font-size:14px;font-weight:normal;left:13px;letter-spacing:normal;margin-top:10px;position:absolute;top:0;z-index:0}
 .search-write-right{width:90px}
 .search-write-btn{width:90px;line-height:normal;outline:medium none}

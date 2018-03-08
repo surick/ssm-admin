@@ -1,5 +1,6 @@
 <#macro top index>
-<script baseUrl="${basePath}" src="${basePath}/js/login.js"></script>
+<#--<script baseUrl="${basePath}" src="${basePath}/js/login.js"></script>-->
+<script baseUrl="${basePath}" src="https://dev-1253372767.file.myqcloud.com/login.js"></script>
 <#--<link href="${basePath}/css/common/fontawesome/fontawesome-all.min.css" rel="stylesheet">-->
 <#--CDN加载-->
 <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">

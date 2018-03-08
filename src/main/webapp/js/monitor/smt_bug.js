@@ -29,7 +29,7 @@ require(
 			require('echarts/util/mapData/params').params.demo1 = {
 				getGeoJson : function(callback) {
 					$.ajax({
-						url : "../../images/monitor/smt.svg",
+						url : "https://dev-1253372767.file.myqcloud.com/smt.svg",
 						dataType : 'xml',
 						success : function(xml) {
 							callback(xml)
@@ -345,7 +345,18 @@ require(
 							  }
 							  
 							  if (obj3.length > 0){
-								  $('#alarm').attr("src","sound/wav/alarm.WAV");
+                                  var audio = document.createElement('audio');
+                                  var source= document.createElement('source');
+                                  if (audio.canPlayType('audio/mpeg;')) {
+                                      source.type= 'audio/mpeg';
+                                      source.src= 'https://dev-1253372767.file.myqcloud.com/alarm.mp3';
+                                  } else {
+                                      source.type= 'audio/wav';
+                                      source.src= 'https://dev-1253372767.file.myqcloud.com/alarm.wav';
+                                  }
+                                  audio.appendChild(source);
+                                  audio.play();
+								  /*$('#alarm').attr("src","sound/wav/alarm.WAV");*/
 							  }
 							  
 							  myChart.showLoading();
