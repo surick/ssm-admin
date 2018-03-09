@@ -3,9 +3,11 @@
     <link rel="shortcut icon" href="${basePath}/favicon.ico" />
     <!-- Bootstrap Core CSS -->
     <link href="${basePath}/css/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <#--<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- MetisMenu CSS -->
-    <link href="${basePath}/css/admin/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <#--<link href="${basePath}/css/admin/metisMenu/metisMenu.min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/metisMenu/2.7.4/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="${basePath}/css/admin/sb-admin-2.css" rel="stylesheet">
@@ -14,17 +16,21 @@
     <link href="${basePath}/css/admin/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="${basePath}/css/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <#-- <link href="${basePath}/css/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <!-- jQuery -->
-    <script src="${basePath}/css/admin/jquery/jquery.min.js"></script>
+    <#--<script src="${basePath}/css/admin/jquery/jquery.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min.js"></script>
+
     <!--layer-->
     <script src="https://cdn.bootcss.com/layer/3.0.3/layer.js"></script>
 
@@ -34,7 +40,8 @@
 
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="${basePath}/css/admin/metisMenu/metisMenu.min.js"></script>
+    <#--<script src="${basePath}/css/admin/metisMenu/metisMenu.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/metisMenu/2.7.4/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="${basePath}/js/admin/sb-admin-2.js"></script>
@@ -230,7 +237,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="${basePath}/user/index2.shtml"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="${basePath}/user/dash.shtml"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 监控中心<span class="fa arrow"></span></a>

@@ -37,7 +37,13 @@ public class UserCoreController extends BaseController {
 	@RequestMapping(value="index",method=RequestMethod.GET)
 	public ModelAndView userIndex(){
 		
-		return new ModelAndView("user/index");
+		return new ModelAndView("/user/per");
+	}
+
+	@RequestMapping(value="dash",method=RequestMethod.GET)
+	public ModelAndView dashIndex(){
+
+		return new ModelAndView("/user/index");
 	}
 	
 	

@@ -4,15 +4,8 @@
     <meta charset="utf-8">
     <meta content="origin" name="referrer" />
 
-    <#--<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-a4bf54bef6fb.css" integrity="sha512-pL9Uvvb7LMqGC8jv/AyqZ7Ya6/HTgkhZzKwEsHOdsfaW2pr3fgzqjgKUSJfYkZ/klxwHrcu+tZwtNDTuw8vH6Q==" media="all" rel="stylesheet" />
-    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d5aa84dde2d5.css" integrity="sha512-1aqE3eLVo8QJ3AfkPFnOFkzBmHnOY5YYQ89j1V4ke28LRSpxHMVQecd6/XxAp5lGLPPSEaFNhLyGKHQHiFXT7w==" media="all" rel="stylesheet" />-->
-
-  <#--  <link href="${basePath}/css/login/frameworks.css" rel="stylesheet">
-    <link href="${basePath}/css/login/login.css" rel="stylesheet">-->
-
-    <!--CDN-->
-    <link href="https://dev-1253372767.file.myqcloud.com/frameworks.css" rel="stylesheet">
-    <link href="https://dev-1253372767.file.myqcloud.com/login.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-a4bf54bef6fb.css" integrity="sha512-pL9Uvvb7LMqGC8jv/AyqZ7Ya6/HTgkhZzKwEsHOdsfaW2pr3fgzqjgKUSJfYkZ/klxwHrcu+tZwtNDTuw8vH6Q==" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-d5aa84dde2d5.css" integrity="sha512-1aqE3eLVo8QJ3AfkPFnOFkzBmHnOY5YYQ89j1V4ke28LRSpxHMVQecd6/XxAp5lGLPPSEaFNhLyGKHQHiFXT7w==" media="all" rel="stylesheet" />
 
     <meta name="viewport" content="width=device-width">
 
@@ -41,12 +34,15 @@
 
 <div role="main" class="application-main ">
 
-    <div>
+    <div id="js-pjax-container">
 
-        <div class="auth-form px-3">
+        <div class="auth-form px-3" id="login">
 
             <form id="_form" action="" method="post">
                 <div class="auth-form-header p-0"><h1>登录</h1></div>
+            <div id="js-flash-container">
+            </div>
+
 
             <div class="auth-form-body mt-3">
 
@@ -66,14 +62,13 @@
 
                 <button type="button" id="login1" class="btn btn-primary btn-block" tabindex="3">登录</button>
             </div>
+                <div class="error"><span></span></div>
         </form>
 
             <p class="create-account-callout mt-3">
                 没有账号?
                 <a href="/u/register.shtml">立即注册</a>.</br>
-            </p>
-            <p class="create-account-callout mt-3">
-                <b><small>Tips:系统每两小时自动回滚数据，如遇账号被乱改请稍后访问.Thanks.</small></b>
+                <code>Tips:demo服务器每两小时自动回滚数据，如遇账号被乱改请稍后访问.Thanks.</code>
             </p>
         </div>
 
