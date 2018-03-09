@@ -141,7 +141,7 @@
 			        	},
 			        	error:function(e){
 			        		console.log(e,e.message);
-			        		layer.msg('请查看后台Java控制台，是否报错，确定已经配置数据库和Redis',new Function());
+			        		layer.msg('请联系管理员是否已经配置开启数据库和Redis',new Function());
 			        	}
 			        });
 			    });
@@ -155,7 +155,5 @@
 			});
         </script>
     </body>
-	<#--<script src="${basePath}/js/common/particles/particles.js"></script>
-    <script src="${basePath}/js/common/particles/app.js"></script>-->
 </html>
 

@@ -2,58 +2,40 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8" />
-		<title>Session详情</title>
+		<title>用户详情--监控中心</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-		<#--<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
-		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-        <link rel="icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" />
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://dev-1253372767.file.myqcloud.com/ssm_base.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://dev-1253372767.file.myqcloud.com/ssm-check.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
-		
 	</head>
 	<body data-target="#one" data-spy="scroll">
-		
+	<div id="wrapper">
 		<@_top.top 2/>
-		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
+		<div id="page-wrapper">
 			<div class="row">
-				<@_left.member 2/>
 				<div class="col-md-10">
-					<h2>Session详情</h2>
+					<h2>用户详情</h2>
 					<hr>
 					<table class="table table-bordered">
 						<tr>
-							<th>Session Id</th>
+							<th>标识号</th>
 							<td>${bo.sessionId?default('—')}</td>
 						</tr>
 						<tr>
-							<th>Session创建时间</th>
+							<th>登录时间</th>
 							<td>${bo.startTime?string('yyyy年MM月dd日 HH:mm:ss')}</td>
 						</tr>
 						<tr>
-							<th>Session最后交互时间</th>
+							<th>最后一次操作时间</th>
 							<td>${bo.lastAccess?string('yyyy年MM月dd日 HH:mm:ss')}</td>
 						</tr>
 						<tr>
-							<th>Session 状态</th>
+							<th>用户状态</th>
 							<td>${(bo.sessionStatus)?string('有效','已踢出')}</td>
 						</tr>
 						<tr>
-							<th>Session Host</th>
+							<th>登录IP</th>
 							<td>${bo.host?default('—')}</td>
 						</tr>
 						<tr>
-							<th>Session timeout</th>
+							<th>失效时间</th>
 							<td>${bo.timeout}&nbsp;(毫秒) = ${bo.timeout/1000}(秒) = ${bo.timeout/1000/60}(分钟)</td>
 						</tr>
 						<tr>
@@ -65,7 +47,7 @@
 							<td>${bo.email?default('—')}</td>
 						</tr>
 						<tr>
-							<th>创建时间</th>
+							<th>帐号创建时间</th>
 							<td>${bo.createTime?string('yyyy-MM-dd HH:mm')}</td>
 						</tr>
 						<tr>
@@ -76,6 +58,6 @@
 				</div>
 			</div><#--/row-->
 		</div>
-			
+    </div>
 	</body>
 </html>

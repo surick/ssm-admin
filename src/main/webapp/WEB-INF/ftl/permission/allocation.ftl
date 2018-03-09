@@ -2,132 +2,16 @@
 <html lang="zh-cn">
 	<head>
 		<meta charset="utf-8" />
-		<title>权限分配 - 权限管理</title>
+		<title>分配权限 - 权限管理</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-		<#--<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
-		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script  src="${basePath}/js/shiro.demo.js"></script>-->
-        <link rel="icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" />
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://dev-1253372767.file.myqcloud.com/ssm_base.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://dev-1253372767.file.myqcloud.com/ssm-check.js"></script>
-		<script >
-			so.init(function(){
-				//初始化全选。
-				so.checkBoxInit('#checkAll','[check=box]');
-				<@shiro.hasPermission name="/permission/clearPermissionByRoleIds.shtml">
-				//全选
-				so.id('deleteAll').on('click',function(){
-					var checkeds = $('[check=box]:checked');
-					if(!checkeds.length){
-						return layer.msg('请选择要清除的角色。',so.default),!0;
-					}
-					var array = [];
-					checkeds.each(function(){
-						array.push(this.value);
-					});
-					return deleteById(array);
-				});
-				</@shiro.hasPermission>
-			});
-			<@shiro.hasPermission name="/permission/clearPermissionByRoleIds.shtml">
-			<#--根据ID数组清空角色的权限-->
-			function deleteById(ids){
-				var index = layer.confirm("确定清除这"+ ids.length +"个角色的权限？",function(){
-					var load = layer.load();
-					$.post('${basePath}/permission/clearPermissionByRoleIds.shtml',{roleIds:ids.join(',')},function(result){
-						layer.close(load);
-						if(result && result.status != 200){
-							return layer.msg(result.message,so.default),!0;
-						}else{
-							layer.msg(result.message);
-							setTimeout(function(){
-								$('#formId').submit();
-							},1000);
-						}
-					},'json');
-					layer.close(index);
-				});
-			}
-			</@shiro.hasPermission>
-			<@shiro.hasPermission name="/permission/addPermission2Role.shtml">
-			<#--选择权限后保存-->
-			function selectPermission(){
-				var checked = $("#boxRoleForm  :checked");
-				var ids=[],names=[];
-				$.each(checked,function(){
-					ids.push(this.id);
-					names.push($.trim($(this).attr('name')));
-				});
-				var index = layer.confirm("确定操作？",function(){
-					<#--loding-->
-					var load = layer.load();
-					$.post('${basePath}/permission/addPermission2Role.shtml',{ids:ids.join(','),roleId:$('#selectRoleId').val()},function(result){
-						layer.close(load);
-						if(result && result.status != 200){
-							return layer.msg(result.message,so.default),!1;
-						}
-						layer.msg('添加成功。');
-						setTimeout(function(){
-							$('#formId').submit();
-						},1000);
-					},'json');
-				});
-			}
-			/*
-			*根据角色ID选择权限，分配权限操作。
-			*/
-			function selectPermissionById(id){
-				var load = layer.load();
-				$.post("${basePath}/permission/selectPermissionById.shtml",{id:id},function(result){
-					layer.close(load);
-					if(result && result.length){
-						var html =[];
-						html.push('<div class="checkbox"><label><input type="checkbox"  selectAllBox="">全选</label></div>');
-						$.each(result,function(){
-							html.push("<div class='checkbox'><label>");
-							html.push("<input type='checkbox' selectBox='' id='");
-							html.push(this.id);
-							html.push("'");
-							if(this.check){
-								html.push(" checked='checked'");
-							}
-							html.push("name='");
-							html.push(this.name);
-							html.push("'/>");
-							html.push(this.name);
-							html.push('</label></div>');
-						});
-						//初始化全选。
-						return so.id('boxRoleForm').html(html.join('')),
-						so.checkBoxInit('[selectAllBox]','[selectBox]'),
-						$('#selectPermission').modal(),$('#selectRoleId').val(id),!1;
-					}else{
-						return layer.msg('没有获取到权限数据，请先添加权限数据。',so.default);
-					}
-				},'json');
-			}
-			</@shiro.hasPermission>
-		</script>
 	</head>
 	<body data-target="#one" data-spy="scroll">
-		<#--引入头部-->
+        <div id="wrapper">
 		<@_top.top 3/>
-		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
+		<div id="page-wrapper">
 			<div class="row">
-				<#--引入左侧菜单-->
-				<@_left.role 4/>
 				<div class="col-md-10">
-					<h2><i class="fa fa-sitemap"></i> 权限分配</h2>
+					<h2><i class="fa fa-sitemap"></i> 分配权限</h2>
 					<hr>
 					<form method="post" action="" id="formId" class="form-inline">
 						<div clss="well">
@@ -204,6 +88,104 @@
 			<#--/弹框-->
 			
 		</div>
-			
+		</div>
+        <script>
+            so.init(function(){
+                //初始化全选。
+                so.checkBoxInit('#checkAll','[check=box]');
+				<@shiro.hasPermission name="/permission/clearPermissionByRoleIds.shtml">
+				//全选
+				so.id('deleteAll').on('click',function(){
+                    var checkeds = $('[check=box]:checked');
+                    if(!checkeds.length){
+                        return layer.msg('请选择要清除的角色。',so.default),!0;
+                    }
+                    var array = [];
+                    checkeds.each(function(){
+                        array.push(this.value);
+                    });
+                    return deleteById(array);
+                });
+				</@shiro.hasPermission>
+            });
+			<@shiro.hasPermission name="/permission/clearPermissionByRoleIds.shtml">
+			<#--根据ID数组清空角色的权限-->
+			function deleteById(ids){
+                var index = layer.confirm("确定清除这"+ ids.length +"个角色的权限？",function(){
+                    var load = layer.load();
+                    $.post('${basePath}/permission/clearPermissionByRoleIds.shtml',{roleIds:ids.join(',')},function(result){
+                        layer.close(load);
+                        if(result && result.status != 200){
+                            return layer.msg(result.message,so.default),!0;
+                        }else{
+                            layer.msg(result.message);
+                            setTimeout(function(){
+                                $('#formId').submit();
+                            },1000);
+                        }
+                    },'json');
+                    layer.close(index);
+                });
+            }
+			</@shiro.hasPermission>
+			<@shiro.hasPermission name="/permission/addPermission2Role.shtml">
+			<#--选择权限后保存-->
+			function selectPermission(){
+                var checked = $("#boxRoleForm  :checked");
+                var ids=[],names=[];
+                $.each(checked,function(){
+                    ids.push(this.id);
+                    names.push($.trim($(this).attr('name')));
+                });
+                var index = layer.confirm("确定操作？",function(){
+				<#--loding-->
+                    var load = layer.load();
+                    $.post('${basePath}/permission/addPermission2Role.shtml',{ids:ids.join(','),roleId:$('#selectRoleId').val()},function(result){
+                        layer.close(load);
+                        if(result && result.status != 200){
+                            return layer.msg(result.message,so.default),!1;
+                        }
+                        layer.msg('添加成功。');
+                        setTimeout(function(){
+                            $('#formId').submit();
+                        },1000);
+                    },'json');
+                });
+            }
+			/*
+			*根据角色ID选择权限，分配权限操作。
+			*/
+			function selectPermissionById(id){
+                var load = layer.load();
+                $.post("${basePath}/permission/selectPermissionById.shtml",{id:id},function(result){
+                    layer.close(load);
+                    if(result && result.length){
+                        var html =[];
+                        html.push('<div class="checkbox"><label><input type="checkbox"  selectAllBox="">全选</label></div>');
+                        $.each(result,function(){
+                            html.push("<div class='checkbox'><label>");
+                            html.push("<input type='checkbox' selectBox='' id='");
+                            html.push(this.id);
+                            html.push("'");
+                            if(this.check){
+                                html.push(" checked='checked'");
+                            }
+                            html.push("name='");
+                            html.push(this.name);
+                            html.push("'/>");
+                            html.push(this.name);
+                            html.push('</label></div>');
+                        });
+                        //初始化全选。
+                        return so.id('boxRoleForm').html(html.join('')),
+                                so.checkBoxInit('[selectAllBox]','[selectBox]'),
+                                $('#selectPermission').modal(),$('#selectRoleId').val(id),!1;
+                    }else{
+                        return layer.msg('没有获取到权限数据，请先添加权限数据。',so.default);
+                    }
+                },'json');
+            }
+			</@shiro.hasPermission>
+        </script>
 	</body>
 </html>

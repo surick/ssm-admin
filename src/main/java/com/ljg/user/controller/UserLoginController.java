@@ -68,7 +68,7 @@ public class UserLoginController extends BaseController {
 	public Map<String,Object> subRegister(String vcode,UUser entity){
 		resultMap.put("status", 400);
 		if(!VerifyCodeUtils.verifyCode(vcode)){
-			resultMap.put("message", "验证码不正确！");
+			resultMap.put("message", "验证码错误！");
 			return resultMap;
 		}
 		String email =  entity.getEmail();
@@ -109,8 +109,6 @@ public class UserLoginController extends BaseController {
 			entity = TokenManager.login(entity,rememberMe);
 			resultMap.put("status", 200);
 			resultMap.put("message", "登录成功");
-			
-			
 			/**
 			 * shiro 获取登录之前的地址
 			 *
@@ -127,13 +125,10 @@ public class UserLoginController extends BaseController {
 			LoggerUtils.fmtDebug(getClass(), "获取登录之前的URL:[%s]",url);
 			//如果登录之前没有地址，那么就跳转到首页。
 			if(StringUtils.isBlank(url)){
-				url = request.getContextPath() + "/user/index.shtml";
+				url = request.getContextPath() + "/user/index2.shtml";
 			}
 			//跳转地址
 			resultMap.put("back_url", url);
-		/**
-		 * 这里其实可以直接catch Exception，然后抛出 message即可，但是最好还是各种明细catch 好点。。
-		 */
 		} catch (DisabledAccountException e) {
 			resultMap.put("status", 500);
 			resultMap.put("message", "帐号已经禁用。");

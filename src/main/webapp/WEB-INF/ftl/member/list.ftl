@@ -4,92 +4,12 @@
 		<meta charset="utf-8" />
 		<title>所有用户—用户管理</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-		<#--<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="${basePath}/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
-		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script  src="${basePath}/js/shiro.demo.js"></script>-->
-        <link rel="icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" />
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://dev-1253372767.file.myqcloud.com/ssm_base.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://dev-1253372767.file.myqcloud.com/ssm-check.js"></script>
-		<script >
-			so.init(function(){
-				//初始化全选。
-				so.checkBoxInit('#checkAll','[check=box]');
-				<@shiro.hasPermission name="/member/deleteUserById.shtml">
-				//全选
-				so.id('deleteAll').on('click',function(){
-					var checkeds = $('[check=box]:checked');
-					if(!checkeds.length){
-						return layer.msg('请选择要删除的选项。',so.default),!0;
-					}
-					var array = [];
-					checkeds.each(function(){
-						array.push(this.value);
-					});
-					return _delete(array);
-				});
-				</@shiro.hasPermission>
-			});
-			<@shiro.hasPermission name="/member/deleteUserById.shtml">
-			//根据ID数组，删除
-			function _delete(ids){
-				var index = layer.confirm("确定这"+ ids.length +"个用户？",function(){
-					var load = layer.load();
-					$.post('${basePath}/member/deleteUserById.shtml',{ids:ids.join(',')},function(result){
-						layer.close(load);
-						if(result && result.status != 200){
-							return layer.msg(result.message,so.default),!0;
-						}else{
-							layer.msg('删除成功');
-							setTimeout(function(){
-								$('#formId').submit();
-							},1000);
-						}
-					},'json');
-					layer.close(index);
-				});
-			}
-			</@shiro.hasPermission>
-			<@shiro.hasPermission name="/member/forbidUserById.shtml">
-			/*
-			*激活 | 禁止用户登录
-			*/
-			function forbidUserById(status,id){
-				var text = status?'激活':'禁止';
-				var index = layer.confirm("确定"+text+"这个用户？",function(){
-					var load = layer.load();
-					$.post('${basePath}/member/forbidUserById.shtml',{status:status,id:id},function(result){
-						layer.close(load);
-						if(result && result.status != 200){
-							return layer.msg(result.message,so.default),!0;
-						}else{
-							layer.msg(text +'成功');
-							setTimeout(function(){
-								$('#formId').submit();
-							},1000);
-						}
-					},'json');
-					layer.close(index);
-				});
-			}
-			</@shiro.hasPermission>
-		</script>
 	</head>
 	<body data-target="#one" data-spy="scroll">
-		
-		<@_top.top 2/>
-		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
+	<div id="wrapper">
+		<@_top.top 3/>
+		<div id="page-wrapper">
 			<div class="row">
-				<@_left.member 1/>
 				<div class="col-md-10">
 					<h2><i class="fa fa-list"></i> 所有用户</h2>
 					<hr>
@@ -154,6 +74,69 @@
 				</div>
 			</div><#--/row-->
 		</div>
-			
+    </div>
+    	<script>
+        	so.init(function(){
+            	//初始化全选。
+            	so.checkBoxInit('#checkAll','[check=box]');
+				<@shiro.hasPermission name="/member/deleteUserById.shtml">
+					//全选
+					so.id('deleteAll').on('click',function(){
+                    	var checkeds = $('[check=box]:checked');
+                    	if(!checkeds.length){
+                        	return layer.msg('请选择要删除的选项。',so.default),!0;
+                    	}
+                    	var array = [];
+                    	checkeds.each(function(){
+                        	array.push(this.value);
+                    	});
+                    	return _delete(array);
+                	});
+				</@shiro.hasPermission>
+        	});
+			<@shiro.hasPermission name="/member/deleteUserById.shtml">
+			//根据ID数组，删除
+			function _delete(ids){
+                var index = layer.confirm("确定这"+ ids.length +"个用户？",function(){
+                    var load = layer.load();
+                    $.post('${basePath}/member/deleteUserById.shtml',{ids:ids.join(',')},function(result){
+                        layer.close(load);
+                        if(result && result.status != 200){
+                            return layer.msg(result.message,so.default),!0;
+                        }else{
+                            layer.msg('删除成功');
+                            setTimeout(function(){
+                                $('#formId').submit();
+                            },1000);
+                        }
+                    },'json');
+                    layer.close(index);
+                });
+            }
+			</@shiro.hasPermission>
+			<@shiro.hasPermission name="/member/forbidUserById.shtml">
+			/*
+			*激活 | 禁止用户登录
+			*/
+			function forbidUserById(status,id){
+                var text = status?'激活':'禁止';
+                var index = layer.confirm("确定"+text+"这个用户？",function(){
+                    var load = layer.load();
+                    $.post('${basePath}/member/forbidUserById.shtml',{status:status,id:id},function(result){
+                        layer.close(load);
+                        if(result && result.status != 200){
+                            return layer.msg(result.message,so.default),!0;
+                        }else{
+                            layer.msg(text +'成功');
+                            setTimeout(function(){
+                                $('#formId').submit();
+                            },1000);
+                        }
+                    },'json');
+                    layer.close(index);
+                });
+            }
+			</@shiro.hasPermission>
+    	</script>
 	</body>
 </html>

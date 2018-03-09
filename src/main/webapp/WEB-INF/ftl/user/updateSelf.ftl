@@ -4,29 +4,12 @@
 		<meta charset="utf-8" />
 		<title>修改个人资料 —个人中心</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-		<#--<link rel="icon" href="${basePath}/favicon.ico" type="image/x-icon" />
-		<link   rel="shortcut icon" href="${basePath}/favicon.ico" />
-		<link href="${basePath}/js/common/bootstrap/3.3.5/css/bootstrap.min.css?${_v}" rel="stylesheet"/>
-		<link href="${basePath}/css/common/base.css?${_v}" rel="stylesheet"/>
-		<script  src="${basePath}/js/common/jquery/jquery1.8.3.min.js"></script>
-		<script  src="${basePath}/js/common/layer/layer.js"></script>
-		<script  src="${basePath}/js/common/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-
-        <link rel="icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="https://dev-1253372767.file.myqcloud.com/favicon.ico" />
-        <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://dev-1253372767.file.myqcloud.com/ssm_base.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
-        <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://cdn.bootcss.com/jquery.form/4.2.2/jquery.form.min.js"></script>
 	</head>
 	<body data-target="#one" data-spy="scroll">
-		
+		<div id="wrapper">
 		<@_top.top 1/>
-		<div class="container" style="padding-bottom: 15px;min-height: 300px; margin-top: 40px;">
+		<div id="page-wrapper">
 			<div class="row">
-				<@_left.user 1/>
 				<div class="col-md-10">
 					<h2><i class="fa fa-edit"></i>修改个人资料</h2>
 					<hr>
@@ -44,12 +27,12 @@
 							  <button type="submit" class="btn btn-success">保存修改</button>
 						  </div>
 						</form>
-					
 				</div>
 				 <#--地图
 				<@_html.tool_map/>
 				-->
 			</div><#--/row-->
+		</div>
 		</div>
 		<#-- 页脚
 		<@_footer.footer 0/>
@@ -87,6 +70,5 @@
 			
 		});
 		</script>
-			
 	</body>
 </html>
