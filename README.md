@@ -1,7 +1,6 @@
 # ssm-admin
 [![GitHub stars](https://img.shields.io/github/stars/surick/ssm-admin.svg?style=social&label=Stars)](https://github.com/surick/ssm-admin)
 [![GitHub forks](https://img.shields.io/github/forks/surick/ssm-admin.svg?style=social&label=Fork)](https://github.com/surick/ssm-admin)
-
 ## 前言
 一个简单的后台脚手架，易于上手。适合初学者。
 ## 项目介绍
