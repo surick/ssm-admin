@@ -19,9 +19,9 @@ public interface URoleMapper {
 
     int updateByPrimaryKey(URole record);
 
-	Set<String> findRoleByUserId(Long id);
+    Set<String> findRoleByUserId(Long id);
 
-	List<URole> findNowAllPermission(Map<String, Object> map);
+    List<URole> findNowAllPermission(Map<String, Object> map);
 	
-	void initData();
+    void initData();
 }
