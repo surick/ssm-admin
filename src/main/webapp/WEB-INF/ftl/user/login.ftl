@@ -73,7 +73,7 @@
                 <a href="/u/register.shtml">立即注册</a>.</br>
             </p>
             <p class="create-account-callout mt-3">
-                <b><small>Tips:系统每两小时自动回滚数据，如遇账号被乱改请稍后访问.Thanks.</small></b>
+                <b><small>Tips:定时数据恢复已关闭，可以自由注册帐号啦.Thanks.</small></b>
             </p>
         </div>
 

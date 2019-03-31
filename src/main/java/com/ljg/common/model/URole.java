@@ -41,14 +41,14 @@ public class URole  implements Serializable{
     }
 
     public List<UPermission> getPermissions() {
-		return permissions;
-	}
+	return permissions;
+    }
 
-	public void setPermissions(List<UPermission> permissions) {
-		this.permissions = permissions;
-	}
+    public void setPermissions(List<UPermission> permissions) {
+	this.permissions = permissions;
+    }
 
-	public void setType(String type) {
+    public void setType(String type) {
         this.type = type;
     }
     public String toString(){

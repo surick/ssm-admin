@@ -12,13 +12,13 @@ import java.util.Date;
  * 
  */
 public class UUser implements Serializable{
-	private static final long serialVersionUID = 1L;
-	//0:禁止登录
-	public static final Long _0 = new Long(0);
-	//1:有效
-	public static final Long _1 = new Long(1);
-	private Long id;
-	/**昵称*/
+    private static final long serialVersionUID = 1L;
+    //0:禁止登录
+    public static final Long _0 = new Long(0);
+    //1:有效
+    public static final Long _1 = new Long(1);
+    private Long id;
+    /**昵称*/
     private String nickname;
     /**邮箱 | 登录帐号*/
     private String email;
@@ -31,8 +31,6 @@ public class UUser implements Serializable{
     /**1:有效，0:禁止登录*/
     private Long status;
     
-    
-    
     public UUser() {}
     public UUser(UUser user) {
 		this.id = user.getId();
@@ -41,9 +39,9 @@ public class UUser implements Serializable{
 		this.pswd = user.getPswd();
 		this.createTime = user.getCreateTime();
 		this.lastLoginTime = user.getLastLoginTime();
-	}
+    }
 
-	public Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -64,12 +62,12 @@ public class UUser implements Serializable{
     }
 
     public Long getStatus() {
-		return status;
-	}
-	public void setStatus(Long status) {
-		this.status = status;
-	}
-	public void setEmail(String email) {
+	return status;
+    }
+    public void setStatus(Long status) {
+	this.status = status;
+    }
+    public void setEmail(String email) {
         this.email = email;
     }
 
